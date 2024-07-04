@@ -8,12 +8,24 @@ public class Stage : MonoBehaviour
     public int width;
     public int height;
     public float cellSize;
+    public GameObject imgPrefab;
 
     void Start()
     {
         //set an 3x3 grid at selvies position
         grid = new Grid<int>(width, height, cellSize, transform.position);
         grid.DrawGrid();
+        grid.setCellCenters();
+        List<Vector3> cellCenters = grid.getCellCenters();
+        
+        for (int i = 0; i < cellCenters.Count; i++)
+        {
+             GameObject prefabHandle;
+             prefabHandle = Instantiate(imgPrefab);
+             prefabHandle.transform.position = cellCenters[i];
+
+        }
+
     }
 
     // Update is called once per frame
@@ -25,5 +37,8 @@ public class Stage : MonoBehaviour
     public bool GetNearestCell(ref Vector3 worldPositoin)
     {
         return grid.GetNearestCell(ref worldPositoin);
+    }
+    public Grid<int> getGrid(){
+        return grid;
     }
 }

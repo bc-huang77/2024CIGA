@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
@@ -8,43 +9,58 @@ public class ObjectSpawner : MonoBehaviour
     public Stage stage;
     private GameObject currentObject;
 
-    // µ÷ÓÃÕâ¸ö·½·¨À´Éú³ÉÔ¤ÖÆÌå
+    
     public void CreateObject(int index)
     {
         if (currentObject != null) return;
         currentObject = Instantiate(objectPrefab[index]);
-        UpdateObjectPosition();
+        // UpdateObjectPosition();
     }
 
+    // void Start()
+    // {
+    //     int indexBackGroundImg = 1;
+    //     List<Vector3> cellCenters = stage.getGrid().getCellCenters();
+        
+    //     for (int i = 0; i < cellCenters.Count; i++)
+    //     {
+    //         CreateObject(indexBackGroundImg);
+    //         currentObject.transform.position = cellCenters[i];
+    //         currentObject = null;
+
+    //     }
+
+
+    // }
     void Update()
     {
         if (currentObject == null) return;
 
-        // ¸üÐÂÎ»ÖÃ
+        // ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
         UpdateObjectPosition();
 
-        // È·ÈÏ·ÅÖÃ
-        if (Input.GetMouseButtonDown(0)) // Êó±ê×ó¼ü
+        // È·ï¿½Ï·ï¿½ï¿½ï¿½
+        if (Input.GetMouseButtonDown(0)) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             Vector3 newPosition = currentObject.transform.position;
             if (stage.GetNearestCell(ref newPosition))
             {
                 currentObject.transform.position = newPosition;
-                currentObject = null; // ·ÅÖÃÍê³É£¬Çå³ýÒýÓÃ
+                currentObject = null; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             }
             else
             {
-                Destroy(currentObject); // Ïú»Ù¶ÔÏó
-                currentObject = null; // Çå³ýÒýÓÃ
+                Destroy(currentObject); // ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½
+                currentObject = null; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             }
 
         }
 
-        // È¡Ïû²Ù×÷
-        if (Input.GetMouseButtonDown(1)) // Êó±êÓÒ¼ü
+        // È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        if (Input.GetMouseButtonDown(1)) // ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½
         {
-            Destroy(currentObject); // Ïú»Ù¶ÔÏó
-            currentObject = null; // Çå³ýÒýÓÃ
+            Destroy(currentObject); // ï¿½ï¿½ï¿½Ù¶ï¿½ï¿½ï¿½
+            currentObject = null; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
 
         if (Input.GetKeyDown(KeyCode.R))

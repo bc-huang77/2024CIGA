@@ -587,8 +587,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 5
-  height: 3
+  height: 4
   cellSize: 30
+  imgPrefab: {fileID: 8279260186415420251, guid: 9b854ba9c5f72431ea814af64c4ad661, type: 3}
 --- !u!4 &1749702811
 Transform:
   m_ObjectHideFlags: 0
