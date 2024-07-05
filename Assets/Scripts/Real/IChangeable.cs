@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IChangeable
 {
-    public void Change(int times);
+    public void Change();
 
 }
