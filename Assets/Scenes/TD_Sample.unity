@@ -589,7 +589,7 @@ MonoBehaviour:
   width: 5
   height: 4
   cellSize: 30
-  imgPrefab: {fileID: 8279260186415420251, guid: 9b854ba9c5f72431ea814af64c4ad661, type: 3}
+  imgPrefab: {fileID: 5160170351770091770, guid: 17b0f77d54a113c479c44d9a23f5daaa, type: 3}
 --- !u!4 &1749702811
 Transform:
   m_ObjectHideFlags: 0

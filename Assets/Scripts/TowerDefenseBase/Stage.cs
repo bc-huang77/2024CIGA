@@ -23,7 +23,7 @@ public class Stage : MonoBehaviour
              GameObject prefabHandle;
              prefabHandle = Instantiate(imgPrefab);
              prefabHandle.transform.position = cellCenters[i];
-
+             prefabHandle.transform.localScale = new Vector3(cellSize, cellSize, 1.0f);
         }
 
     }
