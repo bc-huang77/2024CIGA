@@ -25,6 +25,8 @@ namespace GrayCity.Control.Movement._Scripts
         public Vector2 FrameInput => _frameInput.Move;
         public event Action<bool, float> GroundedChanged;
         public event Action Jumped;
+        
+        public bool isBouncing = false;
 
         #endregion
 
@@ -217,7 +219,17 @@ namespace GrayCity.Control.Movement._Scripts
 
         #endregion
 
-        private void ApplyMovement() => _rb.velocity = _frameVelocity;  //将速度赋值给Rigidbody2D
+        private void ApplyMovement()
+        {
+            if (isBouncing)
+            {
+                _rb.velocity = new Vector2(_frameVelocity.x, 0);
+            }
+            else
+            {
+                _rb.velocity = _frameVelocity; //将速度赋值给Rigidbody2D
+            }
+        }
 
 #if UNITY_EDITOR
         private void OnValidate()
