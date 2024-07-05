@@ -221,7 +221,7 @@ namespace GrayCity.Control.Movement._Scripts
 
         private void ApplyMovement()
         {
-            if (IgnoringYSpeed)
+            if (IgnoringYSpeed && !_jumpToConsume)
             {
                 _rb.velocity = new Vector2(_frameVelocity.x, 0);
             }
