@@ -41,7 +41,8 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _GlowIntensity: 1.46
+    - _GlowIntensity: 1.23
+    - _Thickness: 0
     m_Colors:
-    - _GlowColor: {r: 1, g: 0.94230855, b: 0, a: 0}
+    - _GlowColor: {r: 0.023670172, g: 0.98039216, b: 0, a: 0}
   m_BuildTextureStacks: []
