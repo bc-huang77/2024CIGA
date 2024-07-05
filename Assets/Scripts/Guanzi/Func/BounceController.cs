@@ -24,7 +24,7 @@ public class BounceController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0f, initialBounceVelocity);
         isBouncing = true;
-        target.GetComponent<PlayerMovement>().isBouncing = true;
+        target.GetComponent<PlayerMovement>().IgnoringYSpeed = true;
         time = 0f;
     }
 
@@ -56,7 +56,7 @@ public class BounceController : MonoBehaviour
         // 将目标对象的父对象恢复为原始父对象
         target.transform.parent = originalParent;
         // 销毁弹跳控制器对象
-        target.GetComponent<PlayerMovement>().isBouncing = false;
+        target.GetComponent<PlayerMovement>().IgnoringYSpeed = false;
         Debug.Log("End Bounce");
     }
 }

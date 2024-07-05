@@ -26,7 +26,7 @@ namespace GrayCity.Control.Movement._Scripts
         public event Action<bool, float> GroundedChanged;
         public event Action Jumped;
         
-        public bool isBouncing = false;
+        public bool IgnoringYSpeed = false;
 
         #endregion
 
@@ -221,7 +221,7 @@ namespace GrayCity.Control.Movement._Scripts
 
         private void ApplyMovement()
         {
-            if (isBouncing)
+            if (IgnoringYSpeed)
             {
                 _rb.velocity = new Vector2(_frameVelocity.x, 0);
             }
