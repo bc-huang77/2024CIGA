@@ -46,9 +46,9 @@ public class FlowFunc : MonoBehaviour
         {
             if(playerMovement == null)
                 playerMovement = other.GetComponent<PlayerMovement>();
-            
-            if(playerMovement != null)
-                playerMovement.IsFlowing = false;
+
+            if (playerMovement != null)
+                StartCoroutine(ChangeState());
             
             Vector2 localXAxis = transform.right;
 
@@ -76,6 +76,12 @@ public class FlowFunc : MonoBehaviour
             yield return null;
         }
         yield break;
+    }
+    
+    IEnumerator ChangeState()
+    {
+        yield return new WaitForSeconds(0.7f);
+        playerMovement.IsFlowing = false;
     }
 
 }
