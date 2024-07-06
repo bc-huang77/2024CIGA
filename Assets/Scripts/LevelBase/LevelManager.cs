@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
+    private bool isFirstTimeLoadManga = true;
 
     // ��ؿ����ݴ洢
     public int playerScore;
     public int currentLevel;
+    private bool enableMange = true;
 
     private void Awake()
     {
@@ -36,11 +38,33 @@ public class LevelManager : MonoBehaviour
         
     }
 
+    public void LoadManga(int mangaIndex)
+    {
+        currentLevel = mangaIndex;
+        SceneManager.LoadScene(mangaIndex);
+    }
     public void LoadLevel(int levelIndex)
     {
-        //Do something
+
+
+        if (!enableMange && levelIndex ==1)
+        {
+            levelIndex++;
+
+        }
+
+
+        // 当第一次 levelindex 为 1，也就是进入漫画场景时，走这个if
+        if (enableMange)
+        {
+            enableMange = false;
+        } 
+        // WARRING: 上面两个if顺序不能变！！！！！！！！
         currentLevel = levelIndex;
         SceneManager.LoadScene(levelIndex);
+        
+        //Do something
+        
     }
 
     public void ResetLevel()

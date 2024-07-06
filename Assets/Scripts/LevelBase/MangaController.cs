@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MangaController : MonoBehaviour
 {
+    public int nextLevel;
     [System.Serializable]
     public struct GameObjectData
     {
@@ -45,11 +46,32 @@ public class MangaController : MonoBehaviour
                     gameObjects[currentObjectIndex].hasFlown = true;
                     currentObjectIndex++;
                     canFly = false;
+                    if (currentObjectIndex >= gameObjects.Length)
+                    {
+                        GoToNextLevel();
+                    }
                 }
             }
         }
     }
 
+    public void GoToNextLevel()
+    {
+        LevelInstance levelInstance = FindObjectOfType<LevelInstance>();
+
+        if (levelInstance != null)
+        {
+            // 找到组件，可以在这里使用它
+            Debug.Log("Found MyComponent in the scene!");
+            levelInstance.LoadLevel(nextLevel);
+
+        }
+        else
+        {
+            // 没有找到组件
+            Debug.Log("MyComponent not found in the scene!");
+        }
+    }
     // 飞行一个物体
     public void FlyObject()
     {
