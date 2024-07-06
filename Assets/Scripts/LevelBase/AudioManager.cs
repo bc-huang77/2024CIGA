@@ -28,12 +28,14 @@ public class AudioManager : MonoBehaviour
         // 如果实例不存在，则创建新的实例
         if (instance == null)
         {
+                        
             // 创建一个不会被销毁的游戏对象
             GameObject audioManagerObject = new GameObject("AudioManager");
             DontDestroyOnLoad(audioManagerObject);
 
             // 添加 AudioManager 组件并赋值给 instance
             instance = audioManagerObject.AddComponent<AudioManager>();
+            instance.audioClips = new List<AudioClip>();
         }
 
         return instance;
@@ -70,12 +72,21 @@ public class AudioManager : MonoBehaviour
     {
         effectVolume = volume;
     }
+    private bool canPlayMusic = true;
     public void PlayMusic()
     {
+        if (!canPlayMusic)
+        {
+            return;
+        }
         audioSource.Play();
     }
     public void PlayMusicOnLoop()
     {
+        if (!canPlayMusic)
+        {
+            return;
+        }
         audioSource.loop = true;
         PlayMusic();
     }
@@ -88,6 +99,12 @@ public class AudioManager : MonoBehaviour
 
     public void SetCurrentMusic(GlobalEnums.SoundSource index)
     {
+        if (audioClips.Count == 0)
+        {
+            canPlayMusic = false;
+            return;
+        }
+
         audioSource.loop = false;
 
         audioSource.clip = audioClips[(int)index];
@@ -96,6 +113,9 @@ public class AudioManager : MonoBehaviour
     
     public void PlaySoundEffect(GlobalEnums.SoundSource index)
     {
+        if(!canPlayMusic){
+            return;
+        }
         audioSource.volume = effectVolume;
         audioSource.PlayOneShot(audioClips[(int)index]);
         audioSource.volume = musicVolume;
