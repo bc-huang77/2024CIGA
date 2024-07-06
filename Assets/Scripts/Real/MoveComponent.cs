@@ -16,7 +16,6 @@ public class MoveComponent : ChangeComponent
     {
         if (base.bSelected)
         {
-            Debug.Log("MoveComponent");
             float h = Input.GetAxis("Mouse ScrollWheel");
             //move up or down
             transform.Translate( Vector3.down * h * MoveSpeed);

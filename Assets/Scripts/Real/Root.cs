@@ -11,8 +11,6 @@ public class Root : ChangeableObject
     {
         scaleComponent = GetComponent<ScaleComponent>();
         scaleComponent.enabled = false;
-        Active();
-        Select();
     }
 
     // Update is called once per frame
@@ -29,12 +27,6 @@ public class Root : ChangeableObject
             scaleComponent.enabled = true;
             currentChange = scaleComponent;
         }
-    }
-
-    override public void Select()
-    {
-        selected = true;
-        currentChange.Select();
     }
 
 }

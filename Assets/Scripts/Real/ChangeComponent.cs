@@ -22,4 +22,9 @@ public class ChangeComponent : MonoBehaviour
         bSelected = true;
     }
 
+    virtual public void Deselect()
+    {
+        bSelected = false;
+    }
+
 }

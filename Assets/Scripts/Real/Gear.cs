@@ -11,8 +11,7 @@ public class Gear : ChangeableObject
     {
         RotateComponent = GetComponent<RotateComponent>();
         RotateComponent.enabled = false;
-        Active();
-        Select();
+        
     }
 
     // Update is called once per frame
@@ -29,12 +28,6 @@ public class Gear : ChangeableObject
             RotateComponent.enabled = true;
             currentChange = RotateComponent;
         }
-    }
-
-    override public void Select()
-    {
-        selected = true;
-        currentChange.Select();
     }
 
 }

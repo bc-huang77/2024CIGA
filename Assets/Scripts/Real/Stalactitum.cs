@@ -10,8 +10,6 @@ public class Stalactitum : ChangeableObject
     {
         MoveComponent = GetComponent<MoveComponent>();
         MoveComponent.enabled = false;
-        Active();
-        Select();
     }
 
     // Update is called once per frame
@@ -30,10 +28,4 @@ public class Stalactitum : ChangeableObject
         }
     }
 
-    override public void Select()
-    {
-        Debug.Log("Stalactitum selected");
-        selected = true;
-        currentChange.Select();
-    }
 }
