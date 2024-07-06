@@ -52,6 +52,10 @@ public class MouseClickController : MonoBehaviour
 
     public void AutoSelected(ChangeableObject obj)
     {
+        if (currentSelected != null)
+        {
+            currentSelected.Deselect();
+        }
         currentSelected = obj;
         obj.Select();
     }
