@@ -9,7 +9,7 @@ public class BounceController : MonoBehaviour
     private Vector3 originalParentPosition;
     private Transform originalParent;
     private float time; // 弹跳时间
-    [SerializeField] private float gravity = 2f;
+    private float gravity = 80f;
 
     private Rigidbody2D rb;
     private Vector2 _frameVelocity;
@@ -28,13 +28,13 @@ public class BounceController : MonoBehaviour
         time = 0f;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isBouncing)
         {
             // 控制弹跳轨迹
             time += Time.deltaTime;
-            
+            _frameVelocity.x = rb.velocity.x;
             // transform.position = new Vector3(transform.position.x, originalParentPosition.y + newY, transform.position.z);
             _frameVelocity.y = Mathf.MoveTowards(rb.velocity.y, -40, gravity * Time.fixedDeltaTime);
             rb.velocity = _frameVelocity;
@@ -42,7 +42,7 @@ public class BounceController : MonoBehaviour
             target.transform.position = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
 
             // 判断弹跳是否结束
-            if (rb.velocity.y <= 3f)
+            if (rb.velocity.y <= 0f)
             {
                 isBouncing = false;
                 EndBounce();
@@ -57,6 +57,5 @@ public class BounceController : MonoBehaviour
         target.transform.parent = originalParent;
         // 销毁弹跳控制器对象
         target.GetComponent<PlayerMovement>().IgnoringYSpeed = false;
-        Debug.Log("End Bounce");
     }
 }
