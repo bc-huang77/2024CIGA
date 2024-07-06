@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,33 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance; // AudioManager 的单例
-    
+       // 私有构造函数，防止通过 new 关键字创建实例
+    private AudioManager()
+    {
+        // 执行初始化操作
+    }
+
+    // 公有静态方法，用于获取单例实例
+    public static AudioManager GetInstance()
+    {
+        // 如果实例不存在，则创建新的实例
+        if (instance == null)
+        {
+            // 创建一个不会被销毁的游戏对象
+            GameObject audioManagerObject = new GameObject("AudioManager");
+            DontDestroyOnLoad(audioManagerObject);
+
+            // 添加 AudioManager 组件并赋值给 instance
+            instance = audioManagerObject.AddComponent<AudioManager>();
+        }
+
+        return instance;
+    } 
 
     public AudioSource audioSource; // 用于播放背景音乐的 AudioSource
     public AudioClip currentAudioClip;
     public List<AudioClip> audioClips;
 
-    public List<AudioClip> clickEffects;
     private void Awake()
     {
         // 设置 AudioManager 的单例
@@ -50,16 +71,17 @@ public class AudioManager : MonoBehaviour
         audioSource.Stop();
     }
 
-    public void setCurrentMusic(int index)
+    public void SetCurrentMusic(GlobalEnums.SoundSource index)
     {
         audioSource.loop = false;
-        audioSource.clip = audioClips[index];
+
+        audioSource.clip = audioClips[(int)index];
 
     }
     
-    public void onClickEffect(int index)
+    public void PlaySoundEffect(GlobalEnums.SoundSource index)
     {
-        audioSource.PlayOneShot(clickEffects[index]);
+        audioSource.PlayOneShot(audioClips[(int)index]);
     }
 
 
@@ -69,8 +91,9 @@ public class AudioManager : MonoBehaviour
     // For test
     void Start()
     {
-        setCurrentMusic(0);
-        PlayMusic();
+        // PlaySoundEffect(GlobalEnums.SoundSource.Event);
+        // SetCurrentMusic(0);
+        // PlayMusic();
         
 
     }
