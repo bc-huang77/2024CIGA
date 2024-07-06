@@ -49,4 +49,10 @@ public class MouseClickController : MonoBehaviour
             }
         }
     }
+
+    public void AutoSelected(ChangeableObject obj)
+    {
+        currentSelected = obj;
+        obj.Select();
+    }
 }
