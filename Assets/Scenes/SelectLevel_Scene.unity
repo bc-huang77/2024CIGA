@@ -732,7 +732,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 266030248}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1054872736}
+        m_TargetAssemblyTypeName: LevelInstance, Assembly-CSharp
+        m_MethodName: PlayMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &266030248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,6 +1190,7 @@ GameObject:
   - component: {fileID: 689108346}
   - component: {fileID: 689108345}
   - component: {fileID: 689108348}
+  - component: {fileID: 689108349}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1250,6 +1263,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1054872736}
+        m_TargetAssemblyTypeName: LevelInstance, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 689108348}
         m_TargetAssemblyTypeName: ImgSwitcher, Assembly-CSharp
         m_MethodName: SwitchImage
@@ -1316,6 +1341,20 @@ MonoBehaviour:
   images:
   - {fileID: 21300000, guid: f49693fa6adaeaf45b32b2b4f6be020b, type: 3}
   - {fileID: 21300000, guid: c7cab9ec90db51f4a8e21d1689721f0a, type: 3}
+--- !u!114 &689108349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689108343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8860a287a22ad4d70b0bbb78b98d6857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  isButtonClickable: 1
 --- !u!1 &1035086050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,7 +1807,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1526869527}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1054872736}
+        m_TargetAssemblyTypeName: LevelInstance, Assembly-CSharp
+        m_MethodName: StopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1526869527
 MonoBehaviour:
   m_ObjectHideFlags: 0

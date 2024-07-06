@@ -21,4 +21,25 @@ public class LevelInstance : MonoBehaviour
         LevelManager.Instance.LoadLevel(levelIndex);
     }
 
+    public void PlayMusic()
+    {
+        AudioManager.instance.setCurrentMusic(1);
+        AudioManager.instance.PlayMusic();
+    }
+    public void PlayMusicOnLoop()
+    {
+        AudioManager.instance.PlayMusicOnLoop();
+    }
+
+    // 停止背景音乐
+    public void StopMusic()
+    {
+        AudioManager.instance.StopMusic();
+    }
+
+    public void setCurrentMusic(int index)
+    {
+        AudioManager.instance.setCurrentMusic(index);
+
+    }
 }
