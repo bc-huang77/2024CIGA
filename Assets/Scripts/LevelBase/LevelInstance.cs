@@ -37,6 +37,11 @@ public class LevelInstance : MonoBehaviour
         LevelManager.Instance.LoadLevel(levelIndex);
     }
 
+    public void LoadManga(int mangaIndex)
+    {
+        LevelManager.Instance.LoadManga(mangaIndex);
+    }
+
     public void PlayMusic()
     {
         AudioManager.instance.PlayMusic();

@@ -9,14 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Start_Scene.unity
     guid: 65a75b011796d5944ba42df58110f0e7
   - enabled: 1
+    path: Assets/Scenes/Manga.unity
+    guid: e2878cdab31ef435aa68da2ecf9438c7
+  - enabled: 1
     path: Assets/Scenes/SelectLevel_Scene.unity
     guid: b4d4ca50dc9ab8d44b1a0b9d6dd5ff12
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/TD_Sample.unity
-    guid: fabe9b1d2e71a5a47b2e06309e24197e
   - enabled: 1
     path: Assets/Scenes/Cave.unity
     guid: 954fad5a1a867461892374c2e1dece83
