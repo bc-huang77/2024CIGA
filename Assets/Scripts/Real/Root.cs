@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gear : ChangeableObject
+public class Root : ChangeableObject
 {
-    private RotateComponent RotateComponent;
+    private ScaleComponent scaleComponent;
 
     // Start is called before the first frame update
     void Start()
     {
-        RotateComponent = GetComponent<RotateComponent>();
-        RotateComponent.enabled = false;
+        scaleComponent = GetComponent<ScaleComponent>();
+        scaleComponent.enabled = false;
         Active();
         Select();
     }
@@ -18,16 +18,16 @@ public class Gear : ChangeableObject
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     override public void Active()
     {
         state++;
-        if(state == 1)
+        if (state == 1)
         {
-            RotateComponent.enabled = true;
-            currentChange = RotateComponent;
+            scaleComponent.enabled = true;
+            currentChange = scaleComponent;
         }
     }
 

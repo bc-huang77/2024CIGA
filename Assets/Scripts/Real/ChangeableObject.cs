@@ -6,6 +6,7 @@ public class ChangeableObject : MonoBehaviour
 {
     protected int state = 0;
     protected bool selected = false;
+    protected ChangeComponent currentChange;
     virtual public void Active() { }
     virtual public void Select() { }
 }
