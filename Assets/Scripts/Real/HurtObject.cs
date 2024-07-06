@@ -19,7 +19,7 @@ public class HurtObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.GetComponent<PlayerMovement>() != null)
         {
             other.GetComponent<PlayerMovement>().Dead();
         }

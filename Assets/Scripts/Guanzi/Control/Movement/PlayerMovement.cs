@@ -283,6 +283,7 @@ namespace GrayCity.Control.Movement._Scripts
         public void Dead()
         {
             GameObject level = GameObject.Find("LevelInstance");
+            Debug.Log("Player Die");
             //do something
         }
 
