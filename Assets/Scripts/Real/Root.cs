@@ -19,7 +19,7 @@ public class Root : ChangeableObject
         
     }
 
-    override public void Active()
+    public override void Active()
     {
         state++;
         if (state == 1)
@@ -31,7 +31,6 @@ public class Root : ChangeableObject
 
     public override void Select()
     {
-        base.Select();
+        scaleComponent.Select();
     }
-
 }
