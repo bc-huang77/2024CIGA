@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
 
-    // ¿ç¹Ø¿¨Êý¾Ý´æ´¢
+    // ï¿½ï¿½Ø¿ï¿½ï¿½ï¿½ï¿½Ý´æ´¢
     public int playerScore;
     public int currentLevel;
 
@@ -41,5 +41,11 @@ public class LevelManager : MonoBehaviour
         //Do something
         currentLevel = levelIndex;
         SceneManager.LoadScene(levelIndex);
+    }
+
+    public void ResetLevel()
+    {
+        SceneManager.LoadScene(currentLevel);
+
     }
 }
