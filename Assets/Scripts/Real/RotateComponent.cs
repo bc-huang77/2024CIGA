@@ -8,6 +8,8 @@ public class RotateComponent : ChangeComponent
     public float RotateSpeed = 20.0f;
     public Transform pivot;
     private float radius;
+    
+    private bool soundPlayed = false;
 
     private void Start()
     {
@@ -16,7 +18,7 @@ public class RotateComponent : ChangeComponent
 
     void Update()
     {
-        //Êó±ê¹öÂÖ¿ØÖÆÐý×ª
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Ö¿ï¿½ï¿½ï¿½ï¿½ï¿½×ª
         if (base.bSelected)
         {
             float h = Input.GetAxis("Mouse ScrollWheel");
@@ -24,6 +26,16 @@ public class RotateComponent : ChangeComponent
             //transform.Rotate(Vector3.forward, h * RotateSpeed);
 
             transform.RotateAround(pivot.position, Vector3.forward, RotateSpeed * h);
+            
+            if (!soundPlayed)
+            {
+                LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Rotate);
+                soundPlayed = true;
+            }
+        }
+        else
+        {
+            soundPlayed = false;
         }
     }
 

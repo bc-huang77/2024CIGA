@@ -7,6 +7,10 @@ public class ScaleComponent : ChangeComponent
     private Transform target; 
     public Transform pivot;
     public float ScaleSpeed = 0.1f;
+    
+    private bool biggerSoundPlayed = false;
+    private bool smallerSoundPlayed = false;
+    
 
     private void Awake()
     {
@@ -25,27 +29,42 @@ public class ScaleComponent : ChangeComponent
             float scroll = Input.GetAxis("Mouse ScrollWheel");
             if (scroll > 0)
             {
-                ScaleObject(target, pivot.position, 1 + ScaleSpeed * Time.deltaTime); // ·Å´ó
+                ScaleObject(target, pivot.position, 1 + ScaleSpeed * Time.deltaTime); // ï¿½Å´ï¿½
+                if (!biggerSoundPlayed)
+                {
+                    LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Bigger);
+                    biggerSoundPlayed = true;
+                }
             }
             else if (scroll < 0)
             {
-                ScaleObject(target, pivot.position, 1 - ScaleSpeed * Time.deltaTime); // ËõÐ¡
+                ScaleObject(target, pivot.position, 1 - ScaleSpeed * Time.deltaTime); // ï¿½ï¿½Ð¡
+                if (!biggerSoundPlayed)
+                {
+                    LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Smaller);
+                    smallerSoundPlayed = true;
+                }
+            }
+            else
+            {
+                biggerSoundPlayed = false;
+                smallerSoundPlayed = false;
             }
         }
     }
 
     void ScaleObject(Transform obj, Vector3 pivot, float scaleFactor)
     {
-        // ¼ÆËãÎïÌåÏà¶ÔÓÚ»ù×¼µãµÄÎ»ÒÆ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú»ï¿½×¼ï¿½ï¿½ï¿½Î»ï¿½ï¿½
         Vector3 direction = obj.position - pivot;
 
-        // Ëõ·ÅÎïÌå
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         obj.localScale *= scaleFactor;
 
-        // Ëõ·ÅºóµÄÎ»ÒÆ
+        // ï¿½ï¿½ï¿½Åºï¿½ï¿½Î»ï¿½ï¿½
         Vector3 newDirection = direction * scaleFactor;
 
-        // ¸üÐÂÎïÌåÎ»ÖÃ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
         obj.position = pivot + newDirection;
     }
 }

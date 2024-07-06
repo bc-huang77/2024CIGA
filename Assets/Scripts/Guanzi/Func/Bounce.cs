@@ -13,6 +13,7 @@ public class Bounce : MonoBehaviour
         if (playerMovement != null)
         {
             playerMovement.Bounce(baseBounceForce * transform.localScale.y);
+            LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Mushroom);
         }
         /*
         // 检查碰撞对象是否是目标对象
