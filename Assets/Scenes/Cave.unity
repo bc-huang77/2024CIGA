@@ -2854,7 +2854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 861858460}
   m_Layer: 3
-  m_Name: GameObject
+  m_Name: pivot
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4270,7 +4270,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 3
-  capsuleCreatedPosition: {fileID: 1290245919}
   capsulePrefab: {fileID: 3690919532521827270, guid: ccae2a106ef8f5b46b9b8c4e2883e78f, type: 3}
 --- !u!212 &1290245918
 SpriteRenderer:
@@ -4370,7 +4369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2a7c3f765de44119cd23efe98d02b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flowDirection: {x: 1, y: 0}
+  angleOffset: 0
   flowSpeed: 2
 --- !u!61 &1369521412
 BoxCollider2D:
@@ -5815,8 +5814,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2102202715}
   - component: {fileID: 2102202714}
+  - component: {fileID: 2102202716}
   m_Layer: 0
-  m_Name: LevelInstance
+  m_Name: Cave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5834,6 +5834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ed0a0a284ae8249905bd5c74f1a046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeController: {fileID: 0}
 --- !u!4 &2102202715
 Transform:
   m_ObjectHideFlags: 0
@@ -5849,3 +5850,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2102202716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102202713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db67020eeb0b8d44b8f8853b87c1e7b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -180,6 +180,7 @@ namespace GrayCity.Control.Movement._Scripts
 
         private void ExecuteJump()
         {
+            LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Jump);
             _endedJumpEarly = false;
             _timeJumpWasPressed = 0;
             _bufferedJumpUsable = false;
