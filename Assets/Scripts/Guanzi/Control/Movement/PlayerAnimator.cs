@@ -92,7 +92,7 @@ namespace GrayCity.Control.Movement._Scripts
         private static readonly int GroundedKey = Animator.StringToHash("Grounded");
         private static readonly int WalkSpeedKey = Animator.StringToHash("WalkSpeed");
         private static readonly int JumpKey = Animator.StringToHash("Jump");
-        private static readonly int WalkKey = Animator.StringToHash("walk");
-        private static readonly int IdleKey = Animator.StringToHash("idle");
+        private static readonly int WalkKey = Animator.StringToHash("Walk");
+        private static readonly int IdleKey = Animator.StringToHash("Idle");
     }
 }
