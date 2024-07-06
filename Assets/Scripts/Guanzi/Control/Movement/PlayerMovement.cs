@@ -284,6 +284,11 @@ namespace GrayCity.Control.Movement._Scripts
             GameObject level = GameObject.Find("LevelInstance");
             //do something
         }
+
+        public void SetYSpeed(float vy)
+        {
+            _frameVelocity.y = vy;
+        }
     }
 
     public struct FrameInput
