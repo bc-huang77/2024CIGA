@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public AudioSource audioSource; // 用于播放背景音乐的 AudioSource
+    public AudioClip currentAudioClip;
+    public List<AudioClip> audioClips;
+    public float musicVolume = 0.5f;
+    public float effectVolume = 0.5f;
     public static AudioManager instance; // AudioManager 的单例
        // 私有构造函数，防止通过 new 关键字创建实例
     private AudioManager()
@@ -12,6 +17,11 @@ public class AudioManager : MonoBehaviour
         // 执行初始化操作
     }
 
+    void Update()
+    {
+        audioSource.volume = musicVolume;
+        
+    }
     // 公有静态方法，用于获取单例实例
     public static AudioManager GetInstance()
     {
@@ -29,9 +39,6 @@ public class AudioManager : MonoBehaviour
         return instance;
     } 
 
-    public AudioSource audioSource; // 用于播放背景音乐的 AudioSource
-    public AudioClip currentAudioClip;
-    public List<AudioClip> audioClips;
 
     private void Awake()
     {
@@ -55,6 +62,14 @@ public class AudioManager : MonoBehaviour
         return instance;
     }
     // 播放背景音乐
+    public void SetMusicVolume(float volume)
+    {
+        musicVolume = volume;
+    }
+    public void SetEffectVolume(float volume)
+    {
+        effectVolume = volume;
+    }
     public void PlayMusic()
     {
         audioSource.Play();
@@ -81,7 +96,9 @@ public class AudioManager : MonoBehaviour
     
     public void PlaySoundEffect(GlobalEnums.SoundSource index)
     {
+        audioSource.volume = effectVolume;
         audioSource.PlayOneShot(audioClips[(int)index]);
+        audioSource.volume = musicVolume;
     }
 
 
@@ -92,8 +109,8 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         // PlaySoundEffect(GlobalEnums.SoundSource.Event);
-        // SetCurrentMusic(0);
-        // PlayMusic();
+        SetCurrentMusic(GlobalEnums.SoundSource.Cave);
+        PlayMusic();
         
 
     }

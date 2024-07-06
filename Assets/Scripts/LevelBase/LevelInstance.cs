@@ -69,6 +69,17 @@ public class LevelInstance : MonoBehaviour
         
     }
 
+    public void SetMusicVolume(float volume)
+    {
+        Debug.Log(volume);
+        AudioManager.instance.SetMusicVolume(volume);
+    }
+
+    public void SetEffectVolume(float volume)
+    {
+        Debug.Log(volume);
+        AudioManager.instance.SetEffectVolume(volume);
+    }
     public FadeAnimateController fadeController; // 目标 UI 图片组件
 
 
