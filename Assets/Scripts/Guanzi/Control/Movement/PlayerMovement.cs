@@ -253,12 +253,12 @@ namespace GrayCity.Control.Movement._Scripts
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    _rb.velocity = new Vector2(_rb.velocity.x, 20f);
+                    _rb.velocity = new Vector2(_rb.velocity.x, 30f);
                 }
                 
                 
                 _frameVelocity.x = 1f * _frameVelocity.x;
-                _frameVelocity.y = Mathf.MoveTowards(_rb.velocity.y, 0f, 100f * Time.fixedDeltaTime);
+                _frameVelocity.y = Mathf.MoveTowards(_rb.velocity.y, -3f, 100f * Time.fixedDeltaTime);
                 _rb.velocity = _frameVelocity;
             }
             else

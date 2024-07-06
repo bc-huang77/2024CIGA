@@ -21,6 +21,8 @@ public class FlowFunc : MonoBehaviour
             if(playerMovement != null)
                 playerMovement.IsFlowing = true;
             
+            StopAllCoroutines();
+            
             
             // 获取物体本地 x 轴方向
             Vector2 localXAxis = transform.right;
@@ -80,7 +82,7 @@ public class FlowFunc : MonoBehaviour
     
     IEnumerator ChangeState()
     {
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(1f);
         playerMovement.IsFlowing = false;
     }
 
