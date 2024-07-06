@@ -9,15 +9,16 @@ public class Bounce : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
+        if (playerMovement != null)
+        {
+            playerMovement.Bounce(baseBounceForce * transform.localScale.y);
+        }
+        /*
         // 检查碰撞对象是否是目标对象
         if (collision.gameObject.CompareTag(targetTag))
         {
-
-            PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
-            if (playerMovement != null)
-            {
-                playerMovement.Bounce(baseBounceForce * transform.localScale.y);
-            }
-        }
+           
+        }*/
     }
 }
