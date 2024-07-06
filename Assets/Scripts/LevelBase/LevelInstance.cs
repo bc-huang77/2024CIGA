@@ -96,6 +96,18 @@ public class LevelInstance : MonoBehaviour
         HandleFadeIn();        
 
     }
+    // TODO: DELETE IT;
+    public void TestCaveClear()
+    {
+        LevelManager.Instance.isCaveClear = true;
+        LevelManager.Instance.isOcenaUnlocked = true;
+
+    }
+    public void TestUnlockCave()
+    {
+        LevelManager.Instance.isCaveUnlocked = true;
+
+    }
     public void OnLevelClear()
     {
         int currentLevel = LevelManager.Instance.getCurrentLevelIndex();
@@ -161,7 +173,6 @@ public class LevelInstance : MonoBehaviour
         fadeController.StartFadeIn();
 
 }
-    private bool isSelectLevel = false;
     public void LoadButton()
     {
         GameObject caveButton = GameObject.Find("GotoCave");
@@ -173,13 +184,13 @@ public class LevelInstance : MonoBehaviour
             return;
         }
 
-        LoadCaveButton(ref caveButton);
-        LoadOcenaButton(ref oceanButton);
-        LoadGlacierButton(ref glacierButton);
+        LoadCaveButton(caveButton);
+        LoadOcenaButton(oceanButton);
+        LoadGlacierButton(glacierButton);
 
     }
 
-    private void LoadCaveButton(ref GameObject caveButton)
+    private void LoadCaveButton(GameObject caveButton)
     {
         ButtonController caveButtonController = caveButton.GetComponent<ButtonController>();
         bool isCaveUnlocked = LevelManager.Instance.isCaveUnlocked;
@@ -189,12 +200,13 @@ public class LevelInstance : MonoBehaviour
             if (LevelManager.Instance.isCaveClear)
             {
                 // TODO: switch img
+                caveButton.GetComponent<ImgSwitcher>().SwitchImage();
                 Debug.Log(5);
             }
 
         }
     }
-    private void LoadOcenaButton(ref GameObject ocenaButton)
+    private void LoadOcenaButton(GameObject ocenaButton)
     {
         ButtonController ocenaButtonController = ocenaButton.GetComponent<ButtonController>();
         bool isOcenaUnlocked = LevelManager.Instance.isOcenaUnlocked;
@@ -209,7 +221,7 @@ public class LevelInstance : MonoBehaviour
 
         }
     }
-    private void LoadGlacierButton(ref GameObject glacierButton)
+    private void LoadGlacierButton(GameObject glacierButton)
     {
         ButtonController glacierButtonController = glacierButton.GetComponent<ButtonController>();
         bool isGlacierUnlocked = LevelManager.Instance.isGlacierUnlocked;
