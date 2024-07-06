@@ -7,6 +7,10 @@ namespace GrayCity.Control.Movement._Scripts
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerMovement : MonoBehaviour, IPlayerMovement
     {
+        public bool canclimb = false;
+        public float test = 2;
+
+
         private ControllerInput _input;
         [SerializeField] private ScriptableStats _stats;
         private Rigidbody2D _rb;
@@ -102,7 +106,10 @@ namespace GrayCity.Control.Movement._Scripts
 
             HandleJump();   //处理跳跃
             HandleDirection();  //处理水平方向
-            HandleGravity();    //处理重力
+            if(!IsClimbing)
+            {
+                HandleGravity();    //处理重力
+            }
             ApplyMovement();    //应用速度
         }
 
@@ -223,6 +230,14 @@ namespace GrayCity.Control.Movement._Scripts
 
         private void ApplyMovement()
         {
+            if(Input.GetAxis("Vertical") < 0 && !IsClimbing)
+            {
+                if(canclimb)
+                {
+                    transform.Translate(Vector2.down * test);
+                }
+            }
+
             if (IsBouncing)
             {
                 _rb.velocity = new Vector2(_frameVelocity.x, 0f);

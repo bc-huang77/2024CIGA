@@ -27,6 +27,7 @@ public class Ladder : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerMovement.IsClimbing = false;
+            other.transform.position += new Vector3(0,0.1f,0);
         }
     }
 }

@@ -30,7 +30,7 @@ public class Capsule : MonoBehaviour
             {
                 if(hit.collider.gameObject != gameObject) return;
                 isDragging = true;
-            }
+            } 
         }
 
         // ���������̧��
