@@ -13,9 +13,11 @@ public class FlowFunc : MonoBehaviour
     void OnTriggerStay2D(Collider2D other)
     {
         // 检查进入触发区域的对象是否是目标对象
-        if (other.CompareTag("Player"))
+        //if (other.CompareTag("Player"))
+        if (other.GetComponent<PlayerMovement>() != null)
         {
-            if(playerMovement == null)
+
+            if (playerMovement == null)
                 playerMovement = other.GetComponent<PlayerMovement>();
             
             if(playerMovement != null)
