@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip currentAudioClip;
     public List<AudioClip> audioClips;
 
+    public List<AudioClip> clickEffects;
     private void Awake()
     {
         // 设置 AudioManager 的单例
@@ -56,6 +57,10 @@ public class AudioManager : MonoBehaviour
 
     }
     
+    public void onClickEffect(int index)
+    {
+        audioSource.PlayOneShot(clickEffects[index]);
+    }
 
 
 
