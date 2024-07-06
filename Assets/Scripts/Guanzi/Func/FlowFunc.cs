@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using GrayCity.Control.Movement._Scripts;
 using UnityEngine;
 
@@ -49,8 +50,32 @@ public class FlowFunc : MonoBehaviour
             if(playerMovement != null)
                 playerMovement.IsFlowing = false;
             
-            // 离开触发区域时，将速度归零
-            // other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            Vector2 localXAxis = transform.right;
+
+            // 计算偏移角度的方向
+            float angleInRadians = angleOffset * Mathf.Deg2Rad; // 将角度转换为弧度
+            Vector2 offsetDirection = new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians));
+
+            // 计算实际的洋流方向
+            Vector2 flowDirection = localXAxis * offsetDirection.x + new Vector2(-localXAxis.y, localXAxis.x) * offsetDirection.y;
+
+            StartCoroutine(PushForce(flowDirection, other.transform));
         }
     }
+
+    IEnumerator PushForce(Vector2 dir, Transform targetTransform)
+    {
+        float duration = 0.5f;
+        float force = 5f;
+        
+        float time = 0;
+        while (time < duration)
+        {
+            targetTransform.position += (Vector3)dir * force * Time.deltaTime;
+            time += Time.deltaTime;
+            yield return null;
+        }
+        yield break;
+    }
+
 }

@@ -42,4 +42,55 @@ public class LevelInstance : MonoBehaviour
         AudioManager.instance.setCurrentMusic(index);
 
     }
+
+    public FadeAnimateController fadeController; // 目标 UI 图片组件
+
+
+    public void OnPlayerDeath()
+    {
+        HandleFadeIn();        
+
+    }
+    public void OnLevelClear()
+    {
+
+    }
+
+    public void ResetLevel()
+    {
+        HandleFadeOut();
+        LevelManager.Instance.ResetLevel();
+        HandleFadeIn();
+    }
+
+
+// 渐变不透明
+    private void HandleFadeOut()
+    {
+        // 通过 GameObject 的名称或标签来查找目标 UI 图片组件
+        fadeController = GameObject.Find("Image").GetComponent<FadeAnimateController>();
+        if (fadeController == null)
+        {
+            return;
+        }
+
+        fadeController.StartFadeOut();
+
+
+    }
+
+// 渐变透明
+    private void HandleFadeIn()
+    {
+        // 通过 GameObject 的名称或标签来查找目标 UI 图片组件
+        fadeController = GameObject.Find("Image").GetComponent<FadeAnimateController>();
+        if (fadeController == null)
+        {
+            return;
+        }
+
+        fadeController.StartFadeIn();
+
+}
+
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace GrayCity.Control.Movement._Scripts
@@ -12,11 +13,13 @@ namespace GrayCity.Control.Movement._Scripts
         [SerializeField, Range(0.1f, 2f)] private float _walkAnimationSpeedModifier = 0.7f;
         [SerializeField] private ScriptableStats _stats;  //主要是为了获取输入阈值
 
-        private IPlayerMovement _player;
+        private PlayerMovement _player;
+        
+        private bool BouncingTriggered = false;
 
         private void Awake()
         {
-            _player = GetComponentInParent<IPlayerMovement>();
+            _player = GetComponentInParent<PlayerMovement>();
         }
 
         private void OnEnable()
@@ -37,6 +40,47 @@ namespace GrayCity.Control.Movement._Scripts
 
             HandleSpriteFlip();
             HandleWalkSpeed();
+
+            if (_player.IsClimbing)
+            {
+                _anim.SetBool(WalkKey, false);
+                _anim.SetBool(IdleKey, false);
+                _anim.SetBool("Climb", true);
+                
+                if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+                {
+                    _anim.SetBool("Climbing",true); 
+                }
+                else
+                {
+                    _anim.SetBool("Climbing", false);
+                }
+            }else
+            {
+                _anim.SetBool("Climb", false);
+            }
+
+            if (_player.IsFlowing)
+            {
+                
+            }
+            else
+            {
+                
+            }
+
+
+            if (_player.IsBouncing && !BouncingTriggered)
+            {
+                //只触发一次trigger
+                _anim.SetTrigger("Bounce");
+                BouncingTriggered = true;
+            }
+            else if (!_player.IsBouncing && BouncingTriggered)
+            {
+                BouncingTriggered = false;
+            }
+
         }
 
         private void HandleSpriteFlip()
@@ -89,10 +133,11 @@ namespace GrayCity.Control.Movement._Scripts
             }
         }
 
+
         private static readonly int GroundedKey = Animator.StringToHash("Grounded");
         private static readonly int WalkSpeedKey = Animator.StringToHash("WalkSpeed");
         private static readonly int JumpKey = Animator.StringToHash("Jump");
-        private static readonly int WalkKey = Animator.StringToHash("walk");
-        private static readonly int IdleKey = Animator.StringToHash("idle");
+        private static readonly int WalkKey = Animator.StringToHash("Walk");
+        private static readonly int IdleKey = Animator.StringToHash("Idle");
     }
 }
