@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CapsuleCreator : MonoBehaviour
 {
+    public MouseClickController mouseClickController;
     public int count = 3;
     public GameObject capsulePrefab;
     private Transform countDisplayer;
@@ -40,6 +41,7 @@ public class CapsuleCreator : MonoBehaviour
             GameObject g = Instantiate(capsulePrefab, transform.position, Quaternion.identity);
             Capsule c = g.GetComponent<Capsule>();
             c.parent = this;
+            c.mouseClickController = mouseClickController;
             count--;
         }
     }
