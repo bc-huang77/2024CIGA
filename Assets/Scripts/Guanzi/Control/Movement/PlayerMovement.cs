@@ -29,6 +29,7 @@ namespace GrayCity.Control.Movement._Scripts
         public bool IsClimbing { get; set; }
         [SerializeField] private float climbSpeed = 5f;
         public bool IsBouncing { get; set; }
+        public bool IsFlowing { get; set; }
 
         #endregion
 
@@ -232,7 +233,7 @@ namespace GrayCity.Control.Movement._Scripts
                 _rb.velocity = new Vector2(_frameVelocity.x, 0f);
             }
 
-            if (IsClimbing)
+            else if (IsClimbing)
             {
                 // 爬梯子，水平速度迅速接近0
                 float tempX = Mathf.MoveTowards(_rb.velocity.x, 0, _stats.AirDeceleration * Time.fixedDeltaTime);
@@ -246,6 +247,12 @@ namespace GrayCity.Control.Movement._Scripts
                 transform.Translate(Vector2.up * verticalInput * climbSpeed * Time.deltaTime);
                 // 水平微小移动
                 transform.Translate(Vector2.right * horizontalInput * climbSpeed * 0.15f * Time.deltaTime);
+            }
+            else if(IsFlowing)
+            {
+                _frameVelocity.x = 1f * _frameVelocity.x;
+                _frameVelocity.y = Mathf.MoveTowards(_rb.velocity.y, 0f, 40f * Time.fixedDeltaTime);
+                _rb.velocity = _frameVelocity;
             }
             else
             {
