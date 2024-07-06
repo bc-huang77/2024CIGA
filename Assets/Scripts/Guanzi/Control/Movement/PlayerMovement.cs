@@ -7,10 +7,6 @@ namespace GrayCity.Control.Movement._Scripts
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerMovement : MonoBehaviour, IPlayerMovement
     {
-        public bool canclimb = false;
-        public float test = 2;
-
-
         private ControllerInput _input;
         [SerializeField] private ScriptableStats _stats;
         private Rigidbody2D _rb;
@@ -33,6 +29,7 @@ namespace GrayCity.Control.Movement._Scripts
         public bool IsClimbing { get; set; }
         [SerializeField] private float climbSpeed = 5f;
         public bool IsBouncing { get; set; }
+        public bool IsFlowing { get; set; }
 
         #endregion
 
@@ -128,8 +125,8 @@ namespace GrayCity.Control.Movement._Scripts
             RaycastHit2D[] results = new RaycastHit2D[1];
             
             // 检测是否与地面和天花板碰撞
-            bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, contactFilter, results, _stats.GrounderDistance) > 0;
-            bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, contactFilter, results, _stats.GrounderDistance) > 0;
+            bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size * transform.localScale, _col.direction, 0, Vector2.down, contactFilter, results, _stats.GrounderDistance) > 0;
+            bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size * transform.localScale, _col.direction, 0, Vector2.up, contactFilter, results, _stats.GrounderDistance) > 0;
 
             // 如果碰到天花板，将垂直速度设为0
             if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
@@ -230,20 +227,13 @@ namespace GrayCity.Control.Movement._Scripts
 
         private void ApplyMovement()
         {
-            if(Input.GetAxis("Vertical") < 0 && !IsClimbing)
-            {
-                if(canclimb)
-                {
-                    transform.Translate(Vector2.down * test);
-                }
-            }
 
             if (IsBouncing)
             {
                 _rb.velocity = new Vector2(_frameVelocity.x, 0f);
             }
 
-            if (IsClimbing)
+            else if (IsClimbing)
             {
                 // 爬梯子，水平速度迅速接近0
                 float tempX = Mathf.MoveTowards(_rb.velocity.x, 0, _stats.AirDeceleration * Time.fixedDeltaTime);
@@ -257,6 +247,12 @@ namespace GrayCity.Control.Movement._Scripts
                 transform.Translate(Vector2.up * verticalInput * climbSpeed * Time.deltaTime);
                 // 水平微小移动
                 transform.Translate(Vector2.right * horizontalInput * climbSpeed * 0.15f * Time.deltaTime);
+            }
+            else if(IsFlowing)
+            {
+                _frameVelocity.x = 1f * _frameVelocity.x;
+                _frameVelocity.y = Mathf.MoveTowards(_rb.velocity.y, 0f, 40f * Time.fixedDeltaTime);
+                _rb.velocity = _frameVelocity;
             }
             else
             {
@@ -282,6 +278,12 @@ namespace GrayCity.Control.Movement._Scripts
         {
             return true;
         }
+
+        public void Dead()
+        {
+            GameObject level = GameObject.Find("LevelInstance");
+            //do something
+        }
     }
 
     public struct FrameInput
@@ -298,4 +300,5 @@ namespace GrayCity.Control.Movement._Scripts
         public event Action Jumped;
         public Vector2 FrameInput { get; }
     }
+
 }

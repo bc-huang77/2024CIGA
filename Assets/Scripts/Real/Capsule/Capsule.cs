@@ -21,6 +21,8 @@ public class Capsule : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        originalPosition = parent.transform.position;
+
         // �������������
         if (Input.GetMouseButtonDown(0))
         {

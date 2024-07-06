@@ -6,7 +6,6 @@ using UnityEngine;
 public class CapsuleCreator : MonoBehaviour
 {
     public int count = 3;
-    public Transform capsuleCreatedPosition;
     public GameObject capsulePrefab;
     private Transform countDisplayer;
 
@@ -38,7 +37,7 @@ public class CapsuleCreator : MonoBehaviour
 
         if (count > 0)
         {
-            GameObject g = Instantiate(capsulePrefab, capsuleCreatedPosition.position, Quaternion.identity);
+            GameObject g = Instantiate(capsulePrefab, transform.position, Quaternion.identity);
             Capsule c = g.GetComponent<Capsule>();
             c.parent = this;
             count--;
