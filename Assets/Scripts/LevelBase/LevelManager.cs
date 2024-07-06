@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public bool isCaveUnlocked = false;
+    public bool isCaveClear = false;
+    public bool isOcenaUnlocked = false;
+    public bool isOcenaClear = false;
+    public bool isGlacierUnlocked = false;
+    public bool isGlacierClear = false;
     public static LevelManager Instance { get; private set; }
     private bool isFirstTimeLoadManga = true;
 
@@ -71,5 +77,9 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(currentLevel);
 
+    }
+    public int getCurrentLevelIndex()
+    {
+        return currentLevel;
     }
 }
