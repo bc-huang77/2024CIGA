@@ -7,7 +7,7 @@ public class LevelInstance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       AudioManager.GetInstance(); 
     }
 
     // Update is called once per frame
@@ -23,7 +23,6 @@ public class LevelInstance : MonoBehaviour
 
     public void PlayMusic()
     {
-        AudioManager.instance.setCurrentMusic(1);
         AudioManager.instance.PlayMusic();
     }
     public void PlayMusicOnLoop()
@@ -37,10 +36,16 @@ public class LevelInstance : MonoBehaviour
         AudioManager.instance.StopMusic();
     }
 
-    public void setCurrentMusic(int index)
+    public void SetCurrentMusic(GlobalEnums.SoundSource index)
     {
-        AudioManager.instance.setCurrentMusic(index);
+        AudioManager.instance.SetCurrentMusic(index);
 
+    }
+
+    public void PlaySoundEffect(GlobalEnums.SoundSource index)
+    {
+        AudioManager.instance.PlaySoundEffect(index);
+        
     }
 
     public FadeAnimateController fadeController; // 目标 UI 图片组件
