@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cave.unity
     guid: 954fad5a1a867461892374c2e1dece83
+  - enabled: 1
+    path: Assets/Scenes/Ocean.unity
+    guid: 54e1e29315213e44a9ee6c52d2a32b16
+  - enabled: 1
+    path: Assets/Scenes/Glacier.unity
+    guid: b644e6c7e26ab1c44bfbed0cdaf24f17
   m_configObjects: {}
