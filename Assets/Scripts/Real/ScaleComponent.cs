@@ -25,11 +25,11 @@ public class ScaleComponent : ChangeComponent
             float scroll = Input.GetAxis("Mouse ScrollWheel");
             if (scroll > 0)
             {
-                ScaleObject(target, pivot.position, 1 + ScaleSpeed); // 放大
+                ScaleObject(target, pivot.position, 1 + ScaleSpeed * Time.deltaTime); // 放大
             }
             else if (scroll < 0)
             {
-                ScaleObject(target, pivot.position, 1 - ScaleSpeed); // 缩小
+                ScaleObject(target, pivot.position, 1 - ScaleSpeed * Time.deltaTime); // 缩小
             }
         }
     }

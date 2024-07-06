@@ -7,10 +7,6 @@ namespace GrayCity.Control.Movement._Scripts
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerMovement : MonoBehaviour, IPlayerMovement
     {
-        public bool canclimb = false;
-        public float test = 2;
-
-
         private ControllerInput _input;
         [SerializeField] private ScriptableStats _stats;
         private Rigidbody2D _rb;
@@ -128,8 +124,8 @@ namespace GrayCity.Control.Movement._Scripts
             RaycastHit2D[] results = new RaycastHit2D[1];
             
             // 检测是否与地面和天花板碰撞
-            bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, contactFilter, results, _stats.GrounderDistance) > 0;
-            bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, contactFilter, results, _stats.GrounderDistance) > 0;
+            bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size * transform.localScale, _col.direction, 0, Vector2.down, contactFilter, results, _stats.GrounderDistance) > 0;
+            bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size * transform.localScale, _col.direction, 0, Vector2.up, contactFilter, results, _stats.GrounderDistance) > 0;
 
             // 如果碰到天花板，将垂直速度设为0
             if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
@@ -230,13 +226,6 @@ namespace GrayCity.Control.Movement._Scripts
 
         private void ApplyMovement()
         {
-            if(Input.GetAxis("Vertical") < 0 && !IsClimbing)
-            {
-                if(canclimb)
-                {
-                    transform.Translate(Vector2.down * test);
-                }
-            }
 
             if (IsBouncing)
             {
@@ -282,6 +271,12 @@ namespace GrayCity.Control.Movement._Scripts
         {
             return true;
         }
+
+        public void Dead()
+        {
+            GameObject level = GameObject.Find("LevelInstance");
+            //do something
+        }
     }
 
     public struct FrameInput
@@ -298,4 +293,5 @@ namespace GrayCity.Control.Movement._Scripts
         public event Action Jumped;
         public Vector2 FrameInput { get; }
     }
+
 }
