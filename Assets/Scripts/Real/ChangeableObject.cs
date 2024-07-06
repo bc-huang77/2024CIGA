@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChangeableObject : MonoBehaviour
 {
+
     protected int state = 0;
     protected bool selected = false;
     protected ChangeComponent currentChange;

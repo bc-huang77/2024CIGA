@@ -251,7 +251,7 @@ namespace GrayCity.Control.Movement._Scripts
             else if(IsFlowing)
             {
                 _frameVelocity.x = 1f * _frameVelocity.x;
-                _frameVelocity.y = Mathf.MoveTowards(_rb.velocity.y, 0f, 40f * Time.fixedDeltaTime);
+                _frameVelocity.y = Mathf.MoveTowards(_rb.velocity.y, 0f, 80f * Time.fixedDeltaTime);
                 _rb.velocity = _frameVelocity;
             }
             else
@@ -283,6 +283,11 @@ namespace GrayCity.Control.Movement._Scripts
         {
             GameObject level = GameObject.Find("LevelInstance");
             //do something
+        }
+
+        public void SetYSpeed(float vy)
+        {
+            _frameVelocity.y = vy;
         }
     }
 
