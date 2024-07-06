@@ -47,7 +47,7 @@ namespace GrayCity.Control.Movement._Scripts
                 _anim.SetBool(IdleKey, false);
                 _anim.SetBool("Climb", true);
                 
-                if (_player.FrameInput.y != 0)
+                if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
                 {
                     _anim.SetBool("Climbing",true); 
                 }
