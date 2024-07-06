@@ -19,10 +19,18 @@ public class LevelInstance : MonoBehaviour
         }
     }
 
+    const int SELECTLEVEL = 2;
+    const int CAVELEVEL = 3;
+    const int OCEANLEVEL = 4;
+    const int GLACIERLEVEL = 5;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (LevelManager.Instance.currentLevel == SELECTLEVEL)
+        {
+            LoadButton();
+        }
        AudioManager.GetInstance(); 
     }
 
@@ -88,8 +96,44 @@ public class LevelInstance : MonoBehaviour
         HandleFadeIn();        
 
     }
+    // TODO: DELETE IT;
+    public void TestCaveClear()
+    {
+        LevelManager.Instance.isCaveClear = true;
+        LevelManager.Instance.isOcenaUnlocked = true;
+
+    }
+    public void TestUnlockCave()
+    {
+        LevelManager.Instance.isCaveUnlocked = true;
+
+    }
     public void OnLevelClear()
     {
+        int currentLevel = LevelManager.Instance.getCurrentLevelIndex();
+        if (currentLevel == CAVELEVEL)
+        {
+            // Sign pass and unlock next level
+            LevelManager.Instance.isCaveClear = true;
+            LevelManager.Instance.isOcenaUnlocked = true;
+            
+        }
+        
+        if (currentLevel == OCEANLEVEL)
+        {
+            // Sign pass and unlock next level
+            LevelManager.Instance.isOcenaClear = true;
+            LevelManager.Instance.isGlacierUnlocked = true;
+            
+        }
+        if (currentLevel == GLACIERLEVEL)
+        {
+            // Sign pass and unlock next level
+            LevelManager.Instance.isGlacierClear = true;
+            // LevelManager.Instance.isOcenaUnlocked = true;
+            // TODO: how to go to end title
+            
+        }
 
     }
 
@@ -129,5 +173,67 @@ public class LevelInstance : MonoBehaviour
         fadeController.StartFadeIn();
 
 }
+    public void LoadButton()
+    {
+        GameObject caveButton = GameObject.Find("GotoCave");
+        GameObject oceanButton = GameObject.Find("GotoOcean");
+        GameObject glacierButton = GameObject.Find("GotoGlacier");
 
+        if (caveButton == null || oceanButton == null || glacierButton == null)
+        {
+            return;
+        }
+
+        LoadCaveButton(caveButton);
+        LoadOcenaButton(oceanButton);
+        LoadGlacierButton(glacierButton);
+
+    }
+
+    private void LoadCaveButton(GameObject caveButton)
+    {
+        ButtonController caveButtonController = caveButton.GetComponent<ButtonController>();
+        bool isCaveUnlocked = LevelManager.Instance.isCaveUnlocked;
+        caveButtonController.SetButtonInteractable(isCaveUnlocked);
+        if (isCaveUnlocked)
+        {
+            if (LevelManager.Instance.isCaveClear)
+            {
+                // TODO: switch img
+                caveButton.GetComponent<ImgSwitcher>().SwitchImage();
+                Debug.Log(5);
+            }
+
+        }
+    }
+    private void LoadOcenaButton(GameObject ocenaButton)
+    {
+        ButtonController ocenaButtonController = ocenaButton.GetComponent<ButtonController>();
+        bool isOcenaUnlocked = LevelManager.Instance.isOcenaUnlocked;
+        ocenaButtonController.SetButtonInteractable(isOcenaUnlocked);
+        if (isOcenaUnlocked)
+        {
+            if (LevelManager.Instance.isOcenaClear)
+            {
+                // TODO: switch img
+                Debug.Log(5);
+            }
+
+        }
+    }
+    private void LoadGlacierButton(GameObject glacierButton)
+    {
+        ButtonController glacierButtonController = glacierButton.GetComponent<ButtonController>();
+        bool isGlacierUnlocked = LevelManager.Instance.isGlacierUnlocked;
+        glacierButtonController.SetButtonInteractable(isGlacierUnlocked);
+        if (isGlacierUnlocked)
+        {
+            if (LevelManager.Instance.isGlacierClear)
+            {
+                // TODO: switch img
+                Debug.Log(5);
+            }
+
+        }
+    }
 }
