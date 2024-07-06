@@ -6,50 +6,58 @@ using UnityEngine.UI;
 public class MangaController : MonoBehaviour
 {
     [System.Serializable]
-    public struct UIImageData
+    public struct GameObjectData
     {
-        public Image image;
+        public GameObject gameObject;
+        public Vector3 initialPosition;
         public Vector3 endPosition;
+        public bool hasFlown;  // 标记物体是否已经飞行过
     }
 
-    public UIImageData[] uiImages;  // 存储每个 UI 图片的数据
+    public GameObjectData[] gameObjects;  // 存储每个游戏物体的数据
     public float flyInDuration = 1.0f;  // 飞入的持续时间
 
-    private Vector3[] initialPositions;  // 存储每个 UI 图片的初始位置
-    private Vector3[] flyInEndPositions;  // 存储每个 UI 图片的终点位置
     private float flyInTimer;  // 飞入的计时器
+    private int currentObjectIndex;  // 当前需要飞行的物体索引
 
-    private void Start()
+    private bool canFly = false;
+    private void Update()
     {
-        // 存储初始位置
-        initialPositions = new Vector3[uiImages.Length];
-        for (int i = 0; i < uiImages.Length; i++)
+        if (canFly)
         {
-            initialPositions[i] = uiImages[i].image.rectTransform.position;
-        }
 
-        // 存储终点位置
-        flyInEndPositions = new Vector3[uiImages.Length];
-        for (int i = 0; i < uiImages.Length; i++)
-        {
-            flyInEndPositions[i] = uiImages[i].endPosition;
+            // 更新飞入计时器
+            flyInTimer += Time.deltaTime;
+
+            // 计算当前的飞入进度（0 到 1）
+            float progress = Mathf.Clamp01(flyInTimer / flyInDuration);
+
+            // 更新当前需要飞行的物体的位置
+            if (currentObjectIndex < gameObjects.Length && !gameObjects[currentObjectIndex].hasFlown)
+            {
+                Vector3 startPosition = gameObjects[currentObjectIndex].initialPosition;
+                Vector3 endPosition = gameObjects[currentObjectIndex].endPosition;
+                gameObjects[currentObjectIndex].gameObject.transform.position = Vector3.Lerp(startPosition, endPosition, progress);
+
+                // 检查物体是否已经完成飞行
+                if (progress >= 1.0f)
+                {
+                    gameObjects[currentObjectIndex].hasFlown = true;
+                    currentObjectIndex++;
+                    canFly = false;
+                }
+            }
         }
     }
 
-    private void Update()
+    // 飞行一个物体
+    public void FlyObject()
     {
-        // 更新飞入计时器
-        flyInTimer += Time.deltaTime;
-
-        // 计算当前的飞入进度（0 到 1）
-        float progress = Mathf.Clamp01(flyInTimer / flyInDuration);
-
-        // 更新每个 UI 图片的位置
-        for (int i = 0; i < uiImages.Length; i++)
+        canFly = true;
+        if (currentObjectIndex < gameObjects.Length && !gameObjects[currentObjectIndex].hasFlown)
         {
-            Vector3 startPosition = initialPositions[i];
-            Vector3 endPosition = flyInEndPositions[i];
-            uiImages[i].image.rectTransform.position = Vector3.Lerp(startPosition, endPosition, progress);
+            // 重置飞行计时器
+            flyInTimer = 0f;
         }
     }
 }
