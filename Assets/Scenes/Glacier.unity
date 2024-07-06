@@ -4255,6 +4255,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2172826225901526883, guid: 4b2bd603cd5d56843a2b1d0d2d5a8b83, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2172826225901526886, guid: 4b2bd603cd5d56843a2b1d0d2d5a8b83, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -5809,6 +5813,7 @@ GameObject:
   - component: {fileID: 2087169312}
   - component: {fileID: 2087169311}
   - component: {fileID: 2087169313}
+  - component: {fileID: 2087169314}
   m_Layer: 0
   m_Name: Icecube
   m_TagString: UpSideDownAble
@@ -5981,3 +5986,16 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &2087169314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087169306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2890e9de65bcc4237b607269594e052a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowMaterial: {fileID: 2100000, guid: 23ae725153c934b30ab72863ea3ac61f, type: 2}
