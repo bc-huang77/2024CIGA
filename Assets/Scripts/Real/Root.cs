@@ -29,4 +29,9 @@ public class Root : ChangeableObject
         }
     }
 
+    public override void Select()
+    {
+        base.Select();
+    }
+
 }

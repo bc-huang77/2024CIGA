@@ -18,7 +18,7 @@ public class MoveComponent : ChangeComponent
         {
             float h = Input.GetAxis("Mouse ScrollWheel");
             //move up or down
-            transform.Translate( Vector3.down * h * MoveSpeed);
+            transform.Translate( Vector3.up * h * MoveSpeed);
         }
     }
 }
