@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// ui元素抖动
 /// </summary>
-public class UiShake : MonoBehaviour
+public class UIShake : MonoBehaviour
 {
     [SerializeField] private float shakeStrength = 0.5f;
     [SerializeField] private float shakeDuration = 0.5f;
