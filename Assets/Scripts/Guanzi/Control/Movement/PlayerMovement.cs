@@ -26,7 +26,9 @@ namespace GrayCity.Control.Movement._Scripts
         public event Action<bool, float> GroundedChanged;
         public event Action Jumped;
         
-        public bool IgnoringYSpeed = false;
+        public bool IsClimbing { get; set; }
+        [SerializeField] private float climbSpeed = 5f;
+        public bool IsBouncing { get; set; }
 
         #endregion
 
@@ -221,15 +223,31 @@ namespace GrayCity.Control.Movement._Scripts
 
         private void ApplyMovement()
         {
-            if (IgnoringYSpeed)
+            if (IsBouncing)
             {
-                _rb.velocity = new Vector2(_frameVelocity.x, _rb.velocity.y);
+                _rb.velocity = new Vector2(_frameVelocity.x, 0f);
+            }
+
+            if (IsClimbing)
+            {
+                // 获取玩家输入
+                float verticalInput = Input.GetAxis("Vertical");
+
+                // 计算垂直移动
+                transform.Translate(Vector2.up * verticalInput * climbSpeed * Time.deltaTime);
             }
             else
             {
                 _rb.velocity = _frameVelocity; //将速度赋值给Rigidbody2D
             }
         }
+
+
+        public void Bounce(float bounceForce)
+        {
+            _frameVelocity.y = bounceForce;
+        }
+        
 
 #if UNITY_EDITOR
         private void OnValidate()
