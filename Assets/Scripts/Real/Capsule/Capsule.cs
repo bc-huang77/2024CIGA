@@ -9,20 +9,22 @@ public class Capsule : MonoBehaviour
     private Vector3 originalPosition;
     private bool isDragging = false; 
     public LayerMask droppableLayer;
+    private GameObject particlePrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         originalPosition = transform.position;
+        particlePrefab = Resources.Load<GameObject>("Prefabs/ActiveParticle");
     }
 
     // Update is called once per frame
     void Update()
     {
-        // ¼ì²âÊó±ê×ó¼ü°´ÏÂ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (Input.GetMouseButtonDown(0))
         {
-            // ¼ì²âÊó±êµã»÷µÄÎïÌå
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit.collider != null)
             {
@@ -31,18 +33,19 @@ public class Capsule : MonoBehaviour
             }
         }
 
-        // ¼ì²âÊó±ê×ó¼üÌ§Æð
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì§ï¿½ï¿½
         if (Input.GetMouseButtonUp(0) && isDragging)
         {
-            // ¼ì²âÊó±êÌ§ÆðµÄÎ»ÖÃÊÇ·ñÔÚÁíÒ»¸öÎïÌåÉÏ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì§ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, droppableLayer);
             if (hit.collider != null)
             {
                 Debug.Log(hit.collider.gameObject.name);
-                // ´¥·¢Ä¿±êÎïÌåµÄÐ§¹û
+                // ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½
                 ChangeableObject changeableObject = hit.collider.GetComponent<ChangeableObject>();
                 if (changeableObject != null)
                 {
+                    Instantiate(particlePrefab, changeableObject.transform.position, Quaternion.identity);
                     changeableObject.Active();
                     parent.CreateCapsule();
                     Destroy(gameObject);
@@ -50,15 +53,15 @@ public class Capsule : MonoBehaviour
                 }
             }
 
-            // ½«±»ÄÃÆðµÄÎïÌå»Ö¸´µ½Ô­Ê¼Î»ÖÃ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½Ô­Ê¼Î»ï¿½ï¿½
             transform.position = originalPosition;
             isDragging = false;
         }
 
-        // Èç¹ûÕýÔÚÍÏ¶¯ÎïÌå
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½ï¿½
         if (isDragging)
         {
-            // ¸üÐÂÎïÌåÎ»ÖÃµ½Êó±êÎ»ÖÃ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ãµï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
         }

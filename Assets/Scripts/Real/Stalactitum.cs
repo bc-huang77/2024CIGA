@@ -18,7 +18,7 @@ public class Stalactitum : ChangeableObject
         
     }
 
-    override public void Active()
+    public override void Active()
     {
         state++;
         if (state == 1)
@@ -28,4 +28,8 @@ public class Stalactitum : ChangeableObject
         }
     }
 
+    public override void Select()
+    {
+        MoveComponent.Select();
+    }
 }
