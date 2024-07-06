@@ -230,11 +230,18 @@ namespace GrayCity.Control.Movement._Scripts
 
             if (IsClimbing)
             {
+                // 爬梯子，水平速度迅速接近0
+                float tempX = Mathf.MoveTowards(_rb.velocity.x, 0, _stats.AirDeceleration * Time.fixedDeltaTime);
+                _rb.velocity = new Vector2(tempX, 0f);
+                
                 // 获取玩家输入
                 float verticalInput = Input.GetAxis("Vertical");
+                float horizontalInput = Input.GetAxis("Horizontal");
 
                 // 计算垂直移动
                 transform.Translate(Vector2.up * verticalInput * climbSpeed * Time.deltaTime);
+                // 水平微小移动
+                transform.Translate(Vector2.right * horizontalInput * climbSpeed * 0.15f * Time.deltaTime);
             }
             else
             {
