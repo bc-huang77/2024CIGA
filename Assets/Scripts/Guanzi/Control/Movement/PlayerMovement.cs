@@ -266,7 +266,7 @@ namespace GrayCity.Control.Movement._Scripts
                 if (flowJump)
                 {
                     Debug.Log("Flowing Jump");
-                    _rb.velocity = new Vector2(_rb.velocity.x, 25f);
+                    _rb.velocity = new Vector2(_rb.velocity.x, 15f);
                     flowJump = false;
                 }
                 
