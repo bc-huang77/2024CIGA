@@ -128,8 +128,8 @@ namespace GrayCity.Control.Movement._Scripts
             RaycastHit2D[] results = new RaycastHit2D[1];
             
             // 检测是否与地面和天花板碰撞
-            bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, contactFilter, results, _stats.GrounderDistance) > 0;
-            bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, contactFilter, results, _stats.GrounderDistance) > 0;
+            bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size * transform.localScale, _col.direction, 0, Vector2.down, contactFilter, results, _stats.GrounderDistance) > 0;
+            bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size * transform.localScale, _col.direction, 0, Vector2.up, contactFilter, results, _stats.GrounderDistance) > 0;
 
             // 如果碰到天花板，将垂直速度设为0
             if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
