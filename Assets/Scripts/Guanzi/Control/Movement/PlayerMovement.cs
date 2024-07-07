@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Build;
 using UnityEngine;
 
 namespace GrayCity.Control.Movement._Scripts
@@ -61,6 +62,13 @@ namespace GrayCity.Control.Movement._Scripts
         {
             _time += Time.deltaTime;
             HandleInput();
+            if (IsFlowing)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    flowJump = true;
+                }
+            }
         }
 
         private void OnEnable()
@@ -107,8 +115,11 @@ namespace GrayCity.Control.Movement._Scripts
             {
                 HandleGravity();    //处理重力
             }
+            
             ApplyMovement();    //应用速度
         }
+
+        bool flowJump = false;
 
         #region Collisions
 
@@ -251,8 +262,17 @@ namespace GrayCity.Control.Movement._Scripts
             }
             else if(IsFlowing)
             {
+                
+                if (flowJump)
+                {
+                    Debug.Log("Flowing Jump");
+                    _rb.velocity = new Vector2(_rb.velocity.x, 15f);
+                    flowJump = false;
+                }
+                
+                
                 _frameVelocity.x = 1f * _frameVelocity.x;
-                _frameVelocity.y = Mathf.MoveTowards(_rb.velocity.y, 0f, 80f * Time.fixedDeltaTime);
+                _frameVelocity.y = Mathf.MoveTowards(_rb.velocity.y, -3f, 100f * Time.fixedDeltaTime);
                 _rb.velocity = _frameVelocity;
             }
             else

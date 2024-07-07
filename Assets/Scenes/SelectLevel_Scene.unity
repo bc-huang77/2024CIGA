@@ -675,6 +675,7 @@ GameObject:
   - component: {fileID: 266030249}
   - component: {fileID: 266030248}
   - component: {fileID: 266030247}
+  - component: {fileID: 266030250}
   m_Layer: 5
   m_Name: GotoOcean
   m_TagString: Untagged
@@ -797,6 +798,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266030245}
   m_CullTransparentMesh: 1
+--- !u!114 &266030250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266030245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8860a287a22ad4d70b0bbb78b98d6857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  isButtonClickable: 1
 --- !u!1 &385473316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,7 +1963,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1035086053}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1054872736}
+        m_TargetAssemblyTypeName: LevelInstance, Assembly-CSharp
+        m_MethodName: TestCaveClear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1035086053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2080,6 +2107,7 @@ GameObject:
   - component: {fileID: 1123405060}
   - component: {fileID: 1123405062}
   - component: {fileID: 1123405061}
+  - component: {fileID: 1123405063}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2204,6 +2232,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123405059}
   m_CullTransparentMesh: 1
+--- !u!114 &1123405063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123405059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8860a287a22ad4d70b0bbb78b98d6857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  isButtonClickable: 1
 --- !u!1 &1162120577
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,6 +2537,7 @@ GameObject:
   - component: {fileID: 1526869528}
   - component: {fileID: 1526869527}
   - component: {fileID: 1526869526}
+  - component: {fileID: 1526869529}
   m_Layer: 5
   m_Name: GotoGlacier
   m_TagString: Untagged
@@ -2617,6 +2660,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526869524}
   m_CullTransparentMesh: 1
+--- !u!114 &1526869529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526869524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8860a287a22ad4d70b0bbb78b98d6857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  isButtonClickable: 1
 --- !u!1 &1551598160
 GameObject:
   m_ObjectHideFlags: 0
@@ -3650,7 +3707,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2072816832}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1054872736}
+        m_TargetAssemblyTypeName: LevelInstance, Assembly-CSharp
+        m_MethodName: TestUnlockCave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2072816832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3718,6 +3787,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136e5454dec8ec140a37417110bbbd05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCaveUnlocked: 0
+  isCaveClear: 0
+  isOcenaUnlocked: 0
+  isOcenaClear: 0
+  isGlacierUnlocked: 0
+  isGlacierClear: 0
   playerScore: 0
   currentLevel: 0
 --- !u!4 &2098190924
