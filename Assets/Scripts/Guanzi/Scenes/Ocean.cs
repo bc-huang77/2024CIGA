@@ -11,11 +11,10 @@ public class Ocean : MonoBehaviour
     void Start()
     {
         levelInstance = GetComponent<LevelInstance>();
-        
-        levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Music_sea);
+        levelInstance.StopMusic();
+        levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Water);
         levelInstance.PlayMusicOnLoop();
-        
-        levelInstance.PlaySoundEffect(GlobalEnums.SoundSource.Water);
+
     }
 
 }

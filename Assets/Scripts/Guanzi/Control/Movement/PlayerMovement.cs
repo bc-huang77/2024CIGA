@@ -36,6 +36,8 @@ namespace GrayCity.Control.Movement._Scripts
 
         private float _time;
 
+        [SerializeField] private bool IsSea  = false;
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -191,7 +193,14 @@ namespace GrayCity.Control.Movement._Scripts
 
         private void ExecuteJump()
         {
-            LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Jump);
+            if (!IsSea)
+            {
+                LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Jump);
+            }
+            else
+            {
+                LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Jump_water);
+            }
             _endedJumpEarly = false;
             _timeJumpWasPressed = 0;
             _bufferedJumpUsable = false;
@@ -266,6 +275,7 @@ namespace GrayCity.Control.Movement._Scripts
                 if (flowJump)
                 {
                     Debug.Log("Flowing Jump");
+                    LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Jump_water);
                     _rb.velocity = new Vector2(_rb.velocity.x, 15f);
                     flowJump = false;
                 }

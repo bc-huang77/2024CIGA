@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Glacier : MonoBehaviour
+public class Forest : MonoBehaviour
 {
     private LevelInstance _levelInstance;
 
@@ -11,7 +10,7 @@ public class Glacier : MonoBehaviour
     {
         _levelInstance = GetComponent<LevelInstance>();
         _levelInstance.StopMusic();
-        _levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Ice);
+        _levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Woods);
         _levelInstance.PlayMusicOnLoop();
 
     }

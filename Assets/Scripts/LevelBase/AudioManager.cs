@@ -129,7 +129,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         // PlaySoundEffect(GlobalEnums.SoundSource.Event);
-        SetCurrentMusic(GlobalEnums.SoundSource.Cave);
+        SetCurrentMusic(GlobalEnums.SoundSource.Music_title);
         PlayMusic();
         
 
