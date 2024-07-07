@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cave : MonoBehaviour
+public class Forest : MonoBehaviour
 {
     private LevelInstance _levelInstance;
-    
-    void Start()
+
+    private void Start()
     {
         _levelInstance = GetComponent<LevelInstance>();
-        
-        _levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Cave);
+        _levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Woods);
         _levelInstance.PlayMusicOnLoop();
 
     }
-    
 }

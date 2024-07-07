@@ -23,7 +23,7 @@ public class MoveComponent : ChangeComponent
             transform.Translate( Vector3.up * h * MoveSpeed);
             if(h != 0 && !soundPlayed)
             {
-                LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Moving);
+                LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Draw);
                 soundPlayed = true;
             }
             else

@@ -10,9 +10,8 @@ public class Glacier : MonoBehaviour
     private void Start()
     {
         _levelInstance = GetComponent<LevelInstance>();
-        _levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Music_ice);
+        _levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Ice);
         _levelInstance.PlayMusicOnLoop();
-        
-        _levelInstance.PlaySoundEffect(GlobalEnums.SoundSource.Ice);
+
     }
 }

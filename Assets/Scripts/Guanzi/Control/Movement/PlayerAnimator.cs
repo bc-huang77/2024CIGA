@@ -16,6 +16,16 @@ namespace GrayCity.Control.Movement._Scripts
         private PlayerMovement _player;
         
         private bool BouncingTriggered = false;
+        
+        [Serializable]
+        public enum Scene
+        {
+            grass,
+            sand,
+            under_the_sea
+        }
+        
+        [SerializeField] private Scene scene = Scene.grass;
 
         private void Awake()
         {
@@ -91,6 +101,10 @@ namespace GrayCity.Control.Movement._Scripts
             }
         }
         
+        
+        [SerializeField] private float walkSoundLength = 0.5f;
+        private float timer = 0;
+        
         //处理走路动画及其速度
         private void HandleWalkSpeed()
         {
@@ -107,6 +121,22 @@ namespace GrayCity.Control.Movement._Scripts
                 _anim.SetFloat(WalkSpeedKey, _walkAnimationSpeedModifier * inputStrength); //设置动画的速度
                 _anim.SetBool(WalkKey, true);
                 _anim.SetBool(IdleKey, false);
+                if(timer <= 0)
+                {
+                    timer = walkSoundLength;
+                    if(scene == Scene.grass)
+                        LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Grass);
+                    else if(scene == Scene.sand)
+                        LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Sand);
+                    else if(scene == Scene.under_the_sea)
+                        LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Under_the_sea);
+                    else
+                        LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Moving);
+                }
+                else
+                {
+                    timer -= Time.deltaTime;
+                }
             }
             else
             {

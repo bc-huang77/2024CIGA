@@ -9,6 +9,9 @@ public class UpSideDownComponent : ChangeComponent
     public float duration = 0.4f;
     public float interval = 1.0f;
     private float lastCallTime = 0.0f;
+
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class UpSideDownComponent : ChangeComponent
             {
                 if (Time.time - lastCallTime > interval)
                 {
+                    LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Upside_down);
                     lastCallTime = Time.time;
                     FlipAllObjects();
                 }
@@ -77,7 +81,7 @@ public class UpSideDownComponent : ChangeComponent
         while (elapsedTime < duration)
         {
             float progress = elapsedTime / duration;
-            // 平滑插值位置和旋转
+            // 骞虫粦鎻掑�间綅缃拰鏃嬭浆
             obj.transform.position = Vector3.Lerp(originalPosition, targetPosition, progress);
             obj.transform.rotation = Quaternion.Lerp(originalRotation, targetRotation, progress);
             elapsedTime += Time.deltaTime;
