@@ -14,13 +14,13 @@ public class ImgSwitcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        imageComponent = GetComponent<UnityEngine.UI.Image> ();
-        // 设置初始图片
-        if (imageComponent != null && images.Length > 0)
-        {
-            Debug.Log(1);
-            imageComponent.sprite = images[currentIndex];
-        }
+        // imageComponent = GetComponent<UnityEngine.UI.Image> ();
+        // // 设置初始图片
+        // if (imageComponent != null && images.Length > 0)
+        // {
+        //     Debug.Log(1);
+        //     imageComponent.sprite = images[currentIndex];
+        // }
        
     }
 
@@ -38,11 +38,12 @@ public class ImgSwitcher : MonoBehaviour
     }
     public void ChangeImage(int index)
     {
+            imageComponent = GetComponent<UnityEngine.UI.Image> ();
 
-        if (imageComponent != null && images.Length > 0)
-        {
-            Debug.Log("test");
+        // if (imageComponent != null && images.Length > 0)
+        // {
+        //     Debug.Log("test");
             imageComponent.sprite = images[index];
-        }
+        // }
     }
 }

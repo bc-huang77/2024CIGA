@@ -6,6 +6,11 @@ public class Forest : MonoBehaviour
 {
     private LevelInstance _levelInstance;
 
+    [SerializeField] private GameObject tipPrefab;
+    // [SerializeField] private Transform targetPosi;
+
+    private GameObject tipObject;
+
     private void Start()
     {
         _levelInstance = GetComponent<LevelInstance>();
@@ -13,5 +18,15 @@ public class Forest : MonoBehaviour
         _levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Woods);
         _levelInstance.PlayMusicOnLoop();
 
+
+        tipObject = Instantiate(tipPrefab);
+
+    }
+
+
+    private void Update(){
+        if(Input.GetKeyDown(KeyCode.Space)){
+            Destroy(tipObject);
+        }
     }
 }

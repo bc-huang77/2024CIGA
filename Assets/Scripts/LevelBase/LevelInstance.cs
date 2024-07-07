@@ -7,6 +7,9 @@ public class LevelInstance : MonoBehaviour
 {
     public static LevelInstance Instance { get; private set; }
 
+  public Texture2D generatedImage;
+
+    private bool imageVisible = true;
     private void Awake()
     {
         if (Instance == null)
@@ -33,13 +36,16 @@ public class LevelInstance : MonoBehaviour
             // TODO: load 
             LoadButton();
         }
+        if (LevelManager.Instance.currentLevel == FORESTLEVEL && LevelManager.Instance.isLoadFirstTimes)
+        {
+
+        }
         AudioManager.GetInstance(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void LoadLevel(int levelIndex)
@@ -217,7 +223,9 @@ public class LevelInstance : MonoBehaviour
                 forestButton.GetComponent<ImgSwitcher>().ChangeImage(0);
             if (LevelManager.Instance.isForestClear)
             {
+                Debug.Log("past");
                 forestButton.GetComponent<ImgSwitcher>().ChangeImage(1);
+                Debug.Log("after");
             }
 
         }
@@ -272,4 +280,5 @@ public class LevelInstance : MonoBehaviour
         }
 
     }
+    
     }

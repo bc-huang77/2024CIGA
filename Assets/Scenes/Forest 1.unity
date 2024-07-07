@@ -428,7 +428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18cf7d6a6b66daf4294d32f4e81bcc66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 454571572}
 --- !u!70 &94636009
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -913,23 +912,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
---- !u!1 &370317089 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2691766260087463220, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
-  m_PrefabInstance: {fileID: 370317088}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &370317090
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370317089}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &397455558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1120,6 +1102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ed0a0a284ae8249905bd5c74f1a046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  generatedImage: {fileID: 0}
   fadeController: {fileID: 0}
 --- !u!114 &454571573
 MonoBehaviour:
@@ -1133,6 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2607dc5d6b880e41a96109d67a251fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tipPrefab: {fileID: 3914061100050325138, guid: fffd451ca1632496296556ae48677a21, type: 3}
 --- !u!1 &491876569
 GameObject:
   m_ObjectHideFlags: 0

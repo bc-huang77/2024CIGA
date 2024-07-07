@@ -130,7 +130,7 @@ public class AudioManager : MonoBehaviour
     {
         // PlaySoundEffect(GlobalEnums.SoundSource.Event);
         SetCurrentMusic(GlobalEnums.SoundSource.Cg);
-        PlayMusic();
+        PlayMusicOnLoop();
         
 
     }

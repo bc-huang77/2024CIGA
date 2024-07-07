@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public bool isForestUnlocked = true;
-    public bool isForestClear = false;
-    public bool isCaveUnlocked = false;
-    public bool isCaveClear = false;
-    public bool isOcenaUnlocked = false;
-    public bool isOcenaClear = false;
-    public bool isGlacierUnlocked = false;
-    public bool isGlacierClear = false;
+    public bool isLoadFirstTimes = true;
+    public bool isForestUnlocked;
+    public bool isForestClear;
+    public bool isCaveUnlocked;
+    public bool isCaveClear;
+    public bool isOcenaUnlocked;
+    public bool isOcenaClear;
+    public bool isGlacierUnlocked;
+    public bool isGlacierClear;
     public static LevelManager Instance { get; private set; }
     private bool isFirstTimeLoadManga = true;
 
