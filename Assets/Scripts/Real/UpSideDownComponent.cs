@@ -59,13 +59,15 @@ public class UpSideDownComponent : ChangeComponent
         Vector3 originalPosition = obj.transform.position;
         Quaternion originalRotation = obj.transform.rotation;
 
-        Vector3 targetPosition = new Vector3(-originalPosition.x, -originalPosition.y, originalPosition.z);
+        Vector3 targetPosition = new Vector3(originalPosition.x, -originalPosition.y, originalPosition.z);
 
         //Quaternion targetRotation = Quaternion.Euler(180 - originalRotation.eulerAngles.x, originalRotation.eulerAngles.y, -originalRotation.eulerAngles.z);
-        Quaternion targetRotation = Quaternion.Euler(obj.transform.eulerAngles.x, obj.transform.eulerAngles.y, obj.transform.eulerAngles.z + 180);
+        Quaternion targetRotation = Quaternion.Euler(obj.transform.eulerAngles.x, obj.transform.eulerAngles.y + 180, obj.transform.eulerAngles.z + 180);
 
         if (obj.GetComponent<PlayerMovement>() != null)
         {
+            obj.GetComponent<PlayerMovement>().enabled = false;
+            obj.GetComponent<CapsuleCollider2D>().enabled = false;
             targetRotation = obj.transform.rotation;
         }
 
@@ -87,10 +89,6 @@ public class UpSideDownComponent : ChangeComponent
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        if (obj.GetComponent<HurtObject>() != null)
-        {
-            obj.GetComponent<HurtObject>().enabled = true;
-        }
 
         if (child)
         {
@@ -98,6 +96,12 @@ public class UpSideDownComponent : ChangeComponent
             {
                 obj.GetComponent<HurtObject>().enabled = true;
             }
+        }
+
+        if (obj.GetComponent<PlayerMovement>() != null)
+        {
+            obj.GetComponent<PlayerMovement>().enabled = true;
+            obj.GetComponent<CapsuleCollider2D>().enabled = true;
         }
 
         obj.transform.position = targetPosition;

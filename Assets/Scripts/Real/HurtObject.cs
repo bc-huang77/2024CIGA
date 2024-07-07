@@ -21,6 +21,7 @@ public class HurtObject : MonoBehaviour
     {
         if (other.GetComponent<PlayerMovement>() != null)
         {
+            Debug.Log("Player Dead");
             other.GetComponent<PlayerMovement>().Dead();
         }
     }
