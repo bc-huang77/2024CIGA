@@ -195,7 +195,7 @@ public class LevelInstance : MonoBehaviour
         GameObject oceanButton = GameObject.Find("GotoOcean");
         GameObject glacierButton = GameObject.Find("GotoGlacier");
 
-        if (forestButton ||caveButton == null || oceanButton == null || glacierButton == null)
+        if (forestButton == null ||caveButton == null || oceanButton == null || glacierButton == null)
         {
             return;
         }
@@ -209,13 +209,15 @@ public class LevelInstance : MonoBehaviour
     private void LoadForestButton(GameObject forestButton)
     {
         ButtonController forestButtonController = forestButton.GetComponent<ButtonController>();
+        Debug.Log(LevelManager.Instance.isForestUnlocked);
         bool isForestUnlocked = LevelManager.Instance.isForestUnlocked;
         forestButtonController.SetButtonInteractable(isForestUnlocked);
         if (isForestUnlocked)
         {
+                forestButton.GetComponent<ImgSwitcher>().ChangeImage(0);
             if (LevelManager.Instance.isForestClear)
             {
-                forestButton.GetComponent<ImgSwitcher>().SwitchImage();
+                forestButton.GetComponent<ImgSwitcher>().ChangeImage(1);
             }
 
         }
@@ -225,11 +227,14 @@ public class LevelInstance : MonoBehaviour
         ButtonController caveButtonController = caveButton.GetComponent<ButtonController>();
         bool isCaveUnlocked = LevelManager.Instance.isCaveUnlocked;
         caveButtonController.SetButtonInteractable(isCaveUnlocked);
+        caveButton.GetComponent<ImgSwitcher>().ChangeImage(0);
         if (isCaveUnlocked)
         {
+            // unlock img
+            caveButton.GetComponent<ImgSwitcher>().ChangeImage(1);
             if (LevelManager.Instance.isCaveClear)
             {
-                caveButton.GetComponent<ImgSwitcher>().SwitchImage();
+                caveButton.GetComponent<ImgSwitcher>().ChangeImage(2);
             }
 
         }
@@ -239,11 +244,13 @@ public class LevelInstance : MonoBehaviour
         ButtonController ocenaButtonController = ocenaButton.GetComponent<ButtonController>();
         bool isOcenaUnlocked = LevelManager.Instance.isOcenaUnlocked;
         ocenaButtonController.SetButtonInteractable(isOcenaUnlocked);
+            ocenaButton.GetComponent<ImgSwitcher>().ChangeImage(0);
         if (isOcenaUnlocked)
         {
+            ocenaButton.GetComponent<ImgSwitcher>().ChangeImage(1);
             if (LevelManager.Instance.isOcenaClear)
             {
-                ocenaButton.GetComponent<ImgSwitcher>().SwitchImage();
+                ocenaButton.GetComponent<ImgSwitcher>().ChangeImage(2);
             }
 
         }
@@ -253,11 +260,14 @@ public class LevelInstance : MonoBehaviour
         ButtonController glacierButtonController = glacierButton.GetComponent<ButtonController>();
         bool isGlacierUnlocked = LevelManager.Instance.isGlacierUnlocked;
         glacierButtonController.SetButtonInteractable(isGlacierUnlocked);
+            glacierButton.GetComponent<ImgSwitcher>().ChangeImage(0);
         if (isGlacierUnlocked)
         {
+            glacierButton.GetComponent<ImgSwitcher>().ChangeImage(1);
+
             if (LevelManager.Instance.isGlacierClear)
             {
-                glacierButton.GetComponent<ImgSwitcher>().SwitchImage();
+                glacierButton.GetComponent<ImgSwitcher>().ChangeImage(2);
             }
         }
 
