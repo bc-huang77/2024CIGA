@@ -134,6 +134,7 @@ public class LevelInstance : MonoBehaviour
             // TODO: how to go to end title
             
         }
+        LoadLevel(SELECTLEVEL);
 
     }
 
