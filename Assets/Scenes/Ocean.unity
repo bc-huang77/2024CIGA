@@ -22074,6 +22074,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: UpSideDownAble
       objectReference: {fileID: 0}
+    - target: {fileID: 2172826225901526887, guid: 4b2bd603cd5d56843a2b1d0d2d5a8b83, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 2dfe0902c196b144785a6c7318a46d15, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b2bd603cd5d56843a2b1d0d2d5a8b83, type: 3}
 --- !u!1 &1473433691
