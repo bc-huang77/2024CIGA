@@ -36,4 +36,13 @@ public class ImgSwitcher : MonoBehaviour
             imageComponent.sprite = images[currentIndex];
         }
     }
+    public void ChangeImage(int index)
+    {
+
+        if (imageComponent != null && images.Length > 0)
+        {
+            Debug.Log("test");
+            imageComponent.sprite = images[index];
+        }
+    }
 }

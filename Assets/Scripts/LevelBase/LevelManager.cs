@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public bool isForestUnlocked = false;
+    public bool isForestUnlocked = true;
     public bool isForestClear = false;
     public bool isCaveUnlocked = false;
     public bool isCaveClear = false;
