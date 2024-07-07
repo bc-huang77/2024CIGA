@@ -32,7 +32,7 @@ public class LevelInstance : MonoBehaviour
         {
             // LoadButton();
         }
-       AudioManager.GetInstance(); 
+        AudioManager.GetInstance(); 
     }
 
     // Update is called once per frame

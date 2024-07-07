@@ -21,6 +21,10 @@ public class ScaleComponent : ChangeComponent
     {
         
     }
+    
+    private float resetTimer = 0;
+    private float resetTime = 0.7f;
+    
 
     void Update()
     {
@@ -35,20 +39,27 @@ public class ScaleComponent : ChangeComponent
                     LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Bigger);
                     biggerSoundPlayed = true;
                 }
+                resetTimer = 0;
             }
             else if (scroll < 0)
             {
                 ScaleObject(target, pivot.position, 1 - ScaleSpeed * Time.deltaTime); // ��С
-                if (!biggerSoundPlayed)
+                if (!smallerSoundPlayed)
                 {
                     LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Smaller);
                     smallerSoundPlayed = true;
                 }
+                resetTimer = 0;
             }
             else
             {
-                biggerSoundPlayed = false;
-                smallerSoundPlayed = false;
+                resetTimer += Time.deltaTime;
+                if (resetTimer > resetTime)
+                {
+                    biggerSoundPlayed = false;
+                    smallerSoundPlayed = false;
+                }
+                
             }
         }
     }
