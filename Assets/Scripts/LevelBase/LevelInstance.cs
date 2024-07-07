@@ -29,7 +29,7 @@ public class LevelInstance : MonoBehaviour
     {
         if (LevelManager.Instance.currentLevel == SELECTLEVEL)
         {
-            LoadButton();
+            // LoadButton();
         }
        AudioManager.GetInstance(); 
     }

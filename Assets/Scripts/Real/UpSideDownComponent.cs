@@ -1,3 +1,4 @@
+using GrayCity.Control.Movement._Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -57,9 +58,22 @@ public class UpSideDownComponent : ChangeComponent
         float elapsedTime = 0;
         Vector3 originalPosition = obj.transform.position;
         Quaternion originalRotation = obj.transform.rotation;
-        Vector3 targetPosition = new Vector3(originalPosition.x, -originalPosition.y, originalPosition.z);
+
+        Vector3 targetPosition = new Vector3(-originalPosition.x, -originalPosition.y, originalPosition.z);
+
         //Quaternion targetRotation = Quaternion.Euler(180 - originalRotation.eulerAngles.x, originalRotation.eulerAngles.y, -originalRotation.eulerAngles.z);
         Quaternion targetRotation = Quaternion.Euler(obj.transform.eulerAngles.x, obj.transform.eulerAngles.y, obj.transform.eulerAngles.z + 180);
+
+        if (obj.GetComponent<PlayerMovement>() != null)
+        {
+            targetRotation = obj.transform.rotation;
+        }
+
+        if(obj.GetComponent<HurtObject>() != null)
+        {
+            obj.GetComponent<HurtObject>().enabled = false;
+        }
+
         while (elapsedTime < duration)
         {
             float progress = elapsedTime / duration;
@@ -69,6 +83,11 @@ public class UpSideDownComponent : ChangeComponent
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        if (obj.GetComponent<HurtObject>() != null)
+        {
+            obj.GetComponent<HurtObject>().enabled = true;
+        }
+
         obj.transform.position = targetPosition;
         obj.transform.rotation = targetRotation;
         yield return null;
