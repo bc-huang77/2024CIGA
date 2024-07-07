@@ -23,6 +23,17 @@ public class HurtObject : MonoBehaviour
         {
             Debug.Log("Player Dead");
             other.GetComponent<PlayerMovement>().Dead();
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Level");
+            for(int i = 0; i < gameObjects.Length; i++)
+            {
+                Debug.Log("found");
+                LevelInstance level = gameObjects[i].GetComponent<LevelInstance>();
+                if(level)
+                {
+                    level.GetComponent<LevelInstance>().ResetLevel();
+                    return;
+                }
+            }
         }
     }
 }

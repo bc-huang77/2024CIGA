@@ -45,7 +45,7 @@ public class Capsule : MonoBehaviour
                 ChangeableObject changeableObject = hit.collider.GetComponent<ChangeableObject>();
                 if (changeableObject != null)
                 {
-                    Instantiate(particlePrefab, changeableObject.transform.position, Quaternion.identity);
+                    Instantiate(particlePrefab, transform.position, Quaternion.identity);
                     LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Glass_broken);
                     changeableObject.Active();
                     mouseClickController.AutoSelected(changeableObject);
