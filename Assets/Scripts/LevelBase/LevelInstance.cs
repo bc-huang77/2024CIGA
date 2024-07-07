@@ -156,7 +156,7 @@ public class LevelInstance : MonoBehaviour
 
 
 // 渐变不透明
-    private void HandleFadeOut()
+    public void HandleFadeOut()
     {
         // 通过 GameObject 的名称或标签来查找目标 UI 图片组件
         fadeController = GameObject.Find("Image").GetComponent<FadeAnimateController>();
@@ -171,8 +171,9 @@ public class LevelInstance : MonoBehaviour
     }
 
 // 渐变透明
-    private void HandleFadeIn()
+    public void HandleFadeIn()
     {
+        Debug.Log(1);
         // 通过 GameObject 的名称或标签来查找目标 UI 图片组件
         fadeController = GameObject.Find("Image").GetComponent<FadeAnimateController>();
         if (fadeController == null)
