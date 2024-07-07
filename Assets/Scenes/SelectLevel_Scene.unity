@@ -138,6 +138,8 @@ GameObject:
   - component: {fileID: 266030253}
   - component: {fileID: 266030252}
   - component: {fileID: 266030251}
+  - component: {fileID: 266030254}
+  - component: {fileID: 266030255}
   m_Layer: 5
   m_Name: GotoOcean
   m_TagString: Untagged
@@ -272,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
-  isButtonClickable: 1
+  isButtonClickable: 0
 --- !u!114 &266030251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +358,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeStrength: 0.5
   shakeDuration: 0.5
+--- !u!114 &266030254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266030245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8860a287a22ad4d70b0bbb78b98d6857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  isButtonClickable: 1
+--- !u!114 &266030255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266030245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd7b68e059c3420ca01c07051f0782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageComponent: {fileID: 0}
+  images:
+  - {fileID: 21300000, guid: 1fc60f893f33548ea83ff541cf7b5c80, type: 3}
+  - {fileID: 21300000, guid: 181ecb196ccdc464eb3191b202bf0f4a, type: 3}
+  - {fileID: 21300000, guid: a6853188e9f6e47a2a1d0e14b6cae912, type: 3}
 --- !u!1 &385473316
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +615,8 @@ GameObject:
   - component: {fileID: 689108352}
   - component: {fileID: 689108351}
   - component: {fileID: 689108350}
+  - component: {fileID: 689108353}
+  - component: {fileID: 689108354}
   m_Layer: 5
   m_Name: GotoCave
   m_TagString: Untagged
@@ -710,15 +745,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689108343}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfd7b68e059c3420ca01c07051f0782e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   imageComponent: {fileID: 0}
   images:
-  - {fileID: 21300000, guid: f49693fa6adaeaf45b32b2b4f6be020b, type: 3}
-  - {fileID: 21300000, guid: c7cab9ec90db51f4a8e21d1689721f0a, type: 3}
+  - {fileID: 21300000, guid: c42d31b3997a94dfdba32885f63b9c80, type: 3}
+  - {fileID: 21300000, guid: de56fca7343f14111a8d19e90921cc4a, type: 3}
+  - {fileID: 21300000, guid: 9335254717c4e4bd4914694a1dbebf12, type: 3}
 --- !u!114 &689108349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,7 +768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
-  isButtonClickable: 1
+  isButtonClickable: 0
 --- !u!114 &689108350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,6 +852,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeStrength: 0.5
   shakeDuration: 0.5
+--- !u!114 &689108353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689108343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8860a287a22ad4d70b0bbb78b98d6857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  isButtonClickable: 1
+--- !u!114 &689108354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689108343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd7b68e059c3420ca01c07051f0782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageComponent: {fileID: 0}
+  images: []
 --- !u!1 &761781629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,6 +1746,8 @@ GameObject:
   - component: {fileID: 1526869532}
   - component: {fileID: 1526869531}
   - component: {fileID: 1526869530}
+  - component: {fileID: 1526869533}
+  - component: {fileID: 1526869534}
   m_Layer: 5
   m_Name: GotoGlacier
   m_TagString: Untagged
@@ -1816,7 +1882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
-  isButtonClickable: 1
+  isButtonClickable: 0
 --- !u!114 &1526869530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1900,6 +1966,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeStrength: 0.5
   shakeDuration: 0.5
+--- !u!114 &1526869533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526869524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8860a287a22ad4d70b0bbb78b98d6857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  isButtonClickable: 1
+--- !u!114 &1526869534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526869524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd7b68e059c3420ca01c07051f0782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageComponent: {fileID: 0}
+  images:
+  - {fileID: 21300000, guid: 6a0110d4e8fbc491c93901c5664de5be, type: 3}
+  - {fileID: 21300000, guid: b2da89de3aaa14582bbc8641d71eb388, type: 3}
+  - {fileID: 21300000, guid: aecfc75f6f93e4f1ca3f565900970d12, type: 3}
 --- !u!1 &1649824806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2567,6 +2664,8 @@ GameObject:
   - component: {fileID: 2072816836}
   - component: {fileID: 2072816835}
   - component: {fileID: 2072816834}
+  - component: {fileID: 2072816837}
+  - component: {fileID: 2072816838}
   m_Layer: 5
   m_Name: GotoForest
   m_TagString: Untagged
@@ -2771,6 +2870,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f02ea9e2ee84c998b9f348712b14db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2072816837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072816829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8860a287a22ad4d70b0bbb78b98d6857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 0}
+  isButtonClickable: 0
+--- !u!114 &2072816838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072816829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd7b68e059c3420ca01c07051f0782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageComponent: {fileID: 0}
+  images:
+  - {fileID: 21300000, guid: cfb877a84788a4e90a621702d5f981f9, type: 3}
+  - {fileID: 21300000, guid: 3b0b13134b81549a48484a6e4834509f, type: 3}
 --- !u!1 &2098190922
 GameObject:
   m_ObjectHideFlags: 0
