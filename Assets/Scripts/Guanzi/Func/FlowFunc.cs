@@ -46,7 +46,7 @@ public class FlowFunc : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<PlayerMovement>() != null)
         {
             if(playerMovement == null)
                 playerMovement = other.GetComponent<PlayerMovement>();
@@ -86,6 +86,7 @@ public class FlowFunc : MonoBehaviour
     {
         yield return new WaitForSeconds(0.7f);
         playerMovement.IsFlowing = false;
+        yield return null;
     }
 
 }

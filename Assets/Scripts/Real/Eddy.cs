@@ -26,6 +26,7 @@ public class Eddy : ChangeableObject
     private void OnTriggerEnter2D(Collider2D collision)
     {
         timer = 0.0f;
+        LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Xuanwo);
     }
 
     void OnTriggerStay2D(Collider2D other)

@@ -6214,7 +6214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f010b30e52eff47a7722dc6df147d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseClickController: {fileID: 0}
+  mouseClickController: {fileID: 45845928}
   count: 3
   capsulePrefab: {fileID: 3690919532521827270, guid: ccae2a106ef8f5b46b9b8c4e2883e78f, type: 3}
 --- !u!212 &1290245918
