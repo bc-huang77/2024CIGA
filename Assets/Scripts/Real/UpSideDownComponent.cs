@@ -75,9 +75,10 @@ public class UpSideDownComponent : ChangeComponent
             targetRotation = obj.transform.rotation;
         }
 
-        if(obj.GetComponent<HurtObject>() != null)
+        Transform child = obj.transform.Find("Hurt");
+        if (child.GetComponent<HurtObject>() != null)
         {
-            obj.GetComponent<HurtObject>().enabled = false;
+            child.GetComponent<HurtObject>().enabled = false;
         }
 
         while (elapsedTime < duration)

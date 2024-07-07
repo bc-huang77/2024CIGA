@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 148823615}
   m_Layer: 0
   m_Name: 3)[[$OVU%[H{)GJVN`2_GVW_tmb
-  m_TagString: Untagged
+  m_TagString: UpSideDownAble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1434,9 +1434,11 @@ GameObject:
   - component: {fileID: 532747227}
   - component: {fileID: 532747226}
   - component: {fileID: 532747228}
+  - component: {fileID: 532747230}
+  - component: {fileID: 532747229}
   m_Layer: 0
   m_Name: ice boarder1@3x-8
-  m_TagString: Untagged
+  m_TagString: UpSideDownAble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1693,6 +1695,32 @@ PolygonCollider2D:
       - {x: 1.1035718, y: -9.689158}
       - {x: 1.0833228, y: -9.608162}
       - {x: 0.95170414, y: -9.263928}
+--- !u!114 &532747229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532747225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645f91734be10934aa0998617bfd8093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.2
+  interval: 1
+--- !u!114 &532747230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532747225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df705d0122e9774dbd182927fd1c13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568315562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,7 +2399,7 @@ GameObject:
   - component: {fileID: 1224345577}
   m_Layer: 0
   m_Name: ice boarder6@3x-8
-  m_TagString: Untagged
+  m_TagString: UpSideDownAble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3547,7 +3575,7 @@ GameObject:
   - component: {fileID: 1427916758}
   m_Layer: 0
   m_Name: ice boarder5@3x-8
-  m_TagString: Untagged
+  m_TagString: UpSideDownAble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3914,6 +3942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 05e6a06c5af93134ab98ff12e2c27265, type: 2}
   climbSpeed: 5
+  IsSea: 0
 --- !u!50 &1499822271
 Rigidbody2D:
   serializedVersion: 4
@@ -4265,7 +4294,7 @@ GameObject:
   - component: {fileID: 1641826757}
   - component: {fileID: 1641826756}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Hurt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4758,7 +4787,7 @@ GameObject:
   - component: {fileID: 1690880341}
   m_Layer: 0
   m_Name: ice boarder2@3x-8
-  m_TagString: Untagged
+  m_TagString: UpSideDownAble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5538,7 +5567,7 @@ GameObject:
   - component: {fileID: 2096532583}
   m_Layer: 0
   m_Name: Ender
-  m_TagString: Untagged
+  m_TagString: UpSideDownAble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
