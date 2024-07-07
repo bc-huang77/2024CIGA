@@ -675,51 +675,6 @@ PolygonCollider2D:
       - {x: -0.885, y: -3.0549998}
       - {x: -0.41, y: -3.0549998}
       - {x: -0.37, y: -3.05}
---- !u!1 &203444757
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 203444759}
-  - component: {fileID: 203444758}
-  m_Layer: 0
-  m_Name: LevelInstance
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &203444758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203444757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ed0a0a284ae8249905bd5c74f1a046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeController: {fileID: 0}
---- !u!4 &203444759
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203444757}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7391372, y: -1.6194637, z: -0.0556054}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 24
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &229856967
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +855,7 @@ GameObject:
   - component: {fileID: 436088495}
   m_Layer: 0
   m_Name: Glacier
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2901,7 +2856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2691766260087463216, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 2691766260087463216, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5291,7 +5246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18cf7d6a6b66daf4294d32f4e81bcc66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 203444758}
+  level: {fileID: 436088495}
 --- !u!212 &2096532585
 SpriteRenderer:
   m_ObjectHideFlags: 0
