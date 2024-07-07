@@ -149,14 +149,14 @@ public class LevelInstance : MonoBehaviour
 
     public void ResetLevel()
     {
-        HandleFadeOut();
+        // HandleFadeOut();
         LevelManager.Instance.ResetLevel();
-        HandleFadeIn();
+        // HandleFadeIn();
     }
 
 
 // 渐变不透明
-    private void HandleFadeOut()
+    public void HandleFadeOut()
     {
         // 通过 GameObject 的名称或标签来查找目标 UI 图片组件
         fadeController = GameObject.Find("Image").GetComponent<FadeAnimateController>();
@@ -171,10 +171,11 @@ public class LevelInstance : MonoBehaviour
     }
 
 // 渐变透明
-    private void HandleFadeIn()
+    public void HandleFadeIn()
     {
         // 通过 GameObject 的名称或标签来查找目标 UI 图片组件
         fadeController = GameObject.Find("Image").GetComponent<FadeAnimateController>();
+        Debug.Log(1);
         if (fadeController == null)
         {
             return;
