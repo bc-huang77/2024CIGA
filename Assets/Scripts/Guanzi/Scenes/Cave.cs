@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Cave : MonoBehaviour
 {
-    private LevelInstance _levelInstance;
     
     void Start()
     {
-        _levelInstance = GetComponent<LevelInstance>();
-        _levelInstance.StopMusic();
+
+        LevelInstance.Instance.StopMusic();
         
-        _levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Cave);
-        _levelInstance.PlayMusicOnLoop();
+        LevelInstance.Instance.SetCurrentMusic(GlobalEnums.SoundSource.Cave);
+        LevelInstance.Instance.PlayMusicOnLoop();
 
     }
     

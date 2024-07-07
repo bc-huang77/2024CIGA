@@ -5,16 +5,13 @@ using UnityEngine;
 
 public class Ocean : MonoBehaviour
 {
-    private LevelInstance levelInstance;
 
     // Start is called before the first frame update
     void Start()
     {
-        levelInstance = GetComponent<LevelInstance>();
-        levelInstance.StopMusic();
-        levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Water);
-        levelInstance.PlayMusicOnLoop();
-
+        LevelInstance.Instance.StopMusic();
+        LevelInstance.Instance.SetCurrentMusic(GlobalEnums.SoundSource.Water);
+        LevelInstance.Instance.PlayMusicOnLoop();
     }
 
 }
