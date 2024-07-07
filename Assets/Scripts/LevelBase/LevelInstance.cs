@@ -30,7 +30,8 @@ public class LevelInstance : MonoBehaviour
     {
         if (LevelManager.Instance.currentLevel == SELECTLEVEL)
         {
-            // LoadButton();
+            // TODO: load 
+            LoadButton();
         }
        AudioManager.GetInstance(); 
     }
@@ -152,9 +153,10 @@ public class LevelInstance : MonoBehaviour
 
     public void ResetLevel()
     {
-        HandleFadeOut();
+        // TODO: FIX IT
+        // HandleFadeOut();
         LevelManager.Instance.ResetLevel();
-        HandleFadeIn();
+        // HandleFadeIn();
     }
 
 
@@ -213,9 +215,7 @@ public class LevelInstance : MonoBehaviour
         {
             if (LevelManager.Instance.isForestClear)
             {
-                // TODO: switch img
-                // forestButton.GetComponent<ImgSwitcher>().SwitchImage();
-                Debug.Log(5);
+                forestButton.GetComponent<ImgSwitcher>().SwitchImage();
             }
 
         }
@@ -229,9 +229,7 @@ public class LevelInstance : MonoBehaviour
         {
             if (LevelManager.Instance.isCaveClear)
             {
-                // TODO: switch img
                 caveButton.GetComponent<ImgSwitcher>().SwitchImage();
-                Debug.Log(5);
             }
 
         }
@@ -245,8 +243,7 @@ public class LevelInstance : MonoBehaviour
         {
             if (LevelManager.Instance.isOcenaClear)
             {
-                // TODO: switch img
-                Debug.Log(5);
+                ocenaButton.GetComponent<ImgSwitcher>().SwitchImage();
             }
 
         }
@@ -260,10 +257,9 @@ public class LevelInstance : MonoBehaviour
         {
             if (LevelManager.Instance.isGlacierClear)
             {
-                // TODO: switch img
-                Debug.Log(5);
+                glacierButton.GetComponent<ImgSwitcher>().SwitchImage();
             }
-
         }
+
     }
-}
+    }

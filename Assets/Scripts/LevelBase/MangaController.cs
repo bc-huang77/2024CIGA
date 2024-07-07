@@ -20,7 +20,7 @@ public class MangaController : MonoBehaviour
 
     private float flyInTimer;  // 飞入的计时器
     private int currentObjectIndex;  // 当前需要飞行的物体索引
-
+    private bool isFlying = false;
     private bool canFly = false;
     private void Update()
     {
@@ -46,6 +46,8 @@ public class MangaController : MonoBehaviour
                     gameObjects[currentObjectIndex].hasFlown = true;
                     currentObjectIndex++;
                     canFly = false;
+                    isFlying = false;
+                    // if go to next lv i.e. manga end
                     if (currentObjectIndex >= gameObjects.Length)
                     {
                         GoToNextLevel();
@@ -78,6 +80,11 @@ public class MangaController : MonoBehaviour
         canFly = true;
         if (currentObjectIndex < gameObjects.Length && !gameObjects[currentObjectIndex].hasFlown)
         {
+            if (isFlying)
+            {
+                return;
+            }
+            isFlying = true;
             // 重置飞行计时器
             flyInTimer = 0f;
         }
