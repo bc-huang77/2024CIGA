@@ -9,6 +9,7 @@ public class Cave : MonoBehaviour
     void Start()
     {
         _levelInstance = GetComponent<LevelInstance>();
+        _levelInstance.StopMusic();
         
         _levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Cave);
         _levelInstance.PlayMusicOnLoop();

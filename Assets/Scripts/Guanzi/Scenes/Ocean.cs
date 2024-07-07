@@ -11,7 +11,7 @@ public class Ocean : MonoBehaviour
     void Start()
     {
         levelInstance = GetComponent<LevelInstance>();
-        
+        levelInstance.StopMusic();
         levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Water);
         levelInstance.PlayMusicOnLoop();
 

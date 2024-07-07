@@ -9,6 +9,7 @@ public class Forest : MonoBehaviour
     private void Start()
     {
         _levelInstance = GetComponent<LevelInstance>();
+        _levelInstance.StopMusic();
         _levelInstance.SetCurrentMusic(GlobalEnums.SoundSource.Woods);
         _levelInstance.PlayMusicOnLoop();
 
