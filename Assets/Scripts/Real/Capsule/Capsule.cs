@@ -46,6 +46,7 @@ public class Capsule : MonoBehaviour
                 if (changeableObject != null)
                 {
                     Instantiate(particlePrefab, changeableObject.transform.position, Quaternion.identity);
+                    LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Glass_broken);
                     changeableObject.Active();
                     mouseClickController.AutoSelected(changeableObject);
                     parent.CreateCapsule();

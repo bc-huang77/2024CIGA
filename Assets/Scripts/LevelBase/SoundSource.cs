@@ -39,6 +39,7 @@ public class GlobalEnums : ScriptableObject
         Sand,
         Under_the_sea,
         Cg,
+        Glass_broken,
 
     }
 }
