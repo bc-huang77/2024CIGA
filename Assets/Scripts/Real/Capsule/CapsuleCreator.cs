@@ -9,11 +9,10 @@ public class CapsuleCreator : MonoBehaviour
     public int count = 3;
     public GameObject capsulePrefab;
     private Transform countDisplayer;
-    private int max;
+
     // Start is called before the first frame update
     void Start()
     {
-        max = count;
         countDisplayer = transform.Find("Text");
         CreateCapsule();
     }
