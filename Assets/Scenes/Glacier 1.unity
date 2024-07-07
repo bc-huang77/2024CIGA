@@ -1436,7 +1436,6 @@ GameObject:
   - component: {fileID: 532747228}
   - component: {fileID: 532747230}
   - component: {fileID: 532747229}
-  - component: {fileID: 532747231}
   m_Layer: 0
   m_Name: ice boarder1@3x-8
   m_TagString: UpSideDownAble
@@ -1722,19 +1721,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df705d0122e9774dbd182927fd1c13c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &532747231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532747225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2890e9de65bcc4237b607269594e052a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  glowMaterial: {fileID: 2100000, guid: 23ae725153c934b30ab72863ea3ac61f, type: 2}
 --- !u!1 &568315562
 GameObject:
   m_ObjectHideFlags: 0
@@ -3325,8 +3311,8 @@ GameObject:
   - component: {fileID: 1338353005}
   - component: {fileID: 1338353004}
   - component: {fileID: 1338353002}
+  - component: {fileID: 1338353006}
   - component: {fileID: 1338353007}
-  - component: {fileID: 1338353008}
   m_Layer: 0
   m_Name: Eddy
   m_TagString: UpSideDownAble
@@ -3409,12 +3395,28 @@ Transform:
   m_GameObject: {fileID: 1338353001}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.05, y: -7.1, z: 0}
-  m_LocalScale: {x: 0.56, y: 0.3, z: 0.44757}
+  m_LocalScale: {x: 0.44757, y: 0.3446289, z: 0.44757}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1338353006
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338353001}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.48840255, y: -0.25705335}
+  serializedVersion: 2
+  m_Radius: 3.1315732
 --- !u!114 &1338353007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3428,22 +3430,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glowMaterial: {fileID: 2100000, guid: 23ae725153c934b30ab72863ea3ac61f, type: 2}
---- !u!70 &1338353008
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338353001}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.3586386, y: 0.1440359}
-  m_Size: {x: 6.81985, y: 5.5524898}
-  m_Direction: 1
 --- !u!1 &1362738348
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,11 +3491,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f010b30e52eff47a7722dc6df147d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: b688053238cd82f4ea4fb0ec2fd07cc3, type: 3}
-  - {fileID: 21300000, guid: 33857fa6bd192f446879d5daf0d870b7, type: 3}
-  - {fileID: 21300000, guid: 427434962ed9ae745937dd08b1e089b3, type: 3}
-  - {fileID: 21300000, guid: ff3f3593305dc9c428846ab1222b9bcd, type: 3}
   mouseClickController: {fileID: 1532685883}
   count: 3
   capsulePrefab: {fileID: 3690919532521827270, guid: ccae2a106ef8f5b46b9b8c4e2883e78f, type: 3}
@@ -3554,8 +3535,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b688053238cd82f4ea4fb0ec2fd07cc3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 0.36862746}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3573,8 +3554,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363550539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.62, y: 5.16, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalPosition: {x: -12.32, y: 5.67, z: 0}
+  m_LocalScale: {x: 2, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1532685884}
@@ -4103,7 +4084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532685882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.17, y: -0.36, z: -0.027902104}
+  m_LocalPosition: {x: 7.455202, y: -2.5714335, z: -0.027902104}
   m_LocalScale: {x: 0.5, y: 0.33333334, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4176,10 +4157,6 @@ PrefabInstance:
     - target: {fileID: 2172826225901526886, guid: 4b2bd603cd5d56843a2b1d0d2d5a8b83, type: 3}
       propertyPath: m_Name
       value: Player (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172826225901526886, guid: 4b2bd603cd5d56843a2b1d0d2d5a8b83, type: 3}
-      propertyPath: m_TagString
-      value: UpSideDownAble
       objectReference: {fileID: 0}
     - target: {fileID: 2172826226144741873, guid: 4b2bd603cd5d56843a2b1d0d2d5a8b83, type: 3}
       propertyPath: m_SortingOrder
@@ -5320,7 +5297,6 @@ MonoBehaviour:
   baseBounceForce: 60
   targetTag: Player
   bounceControllerPrefab: {fileID: 0}
-  bDependsOnParentsScale: 0
 --- !u!114 &2065909066
 MonoBehaviour:
   m_ObjectHideFlags: 0
