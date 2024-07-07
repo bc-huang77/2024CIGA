@@ -44,7 +44,7 @@ public class CapsuleCreator : MonoBehaviour
         spriteRenderer.sprite = sprites[count];
         if (count > 0)
         {
-            GameObject g = Instantiate(capsulePrefab, transform.position, Quaternion.identity);
+            GameObject g = Instantiate(capsulePrefab, transform.position, transform.rotation, transform);
             Capsule c = g.GetComponent<Capsule>();
             c.parent = this;
             c.mouseClickController = mouseClickController;

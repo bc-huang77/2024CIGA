@@ -19,7 +19,7 @@ public class Forest : MonoBehaviour
 
         if (tipPrefab != null)
         {
-            tipObject = Instantiate(tipPrefab, new Vector3(0, 0, 0), Quaternion.identity, transform);
+            tipObject = Instantiate(tipPrefab, new Vector3(0, 5, 0), Quaternion.identity, transform);
             Debug.Log("Tip object instantiated successfully.");
         }
         else

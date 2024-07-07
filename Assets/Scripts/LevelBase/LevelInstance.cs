@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelInstance : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class LevelInstance : MonoBehaviour
     const int CAVELEVEL = 4;
     const int OCEANLEVEL = 5;
     const int GLACIERLEVEL = 6;
+    const int ENDLEVEL = 7;
 
     // Start is called before the first frame update
     void Start()
@@ -135,7 +137,6 @@ public class LevelInstance : MonoBehaviour
             // Sign pass and unlock next level
             LevelManager.Instance.isCaveClear = true;
             LevelManager.Instance.isOcenaUnlocked = true;
-            
         }
         
         if (currentLevel == OCEANLEVEL)
@@ -143,15 +144,16 @@ public class LevelInstance : MonoBehaviour
             // Sign pass and unlock next level
             LevelManager.Instance.isOcenaClear = true;
             LevelManager.Instance.isGlacierUnlocked = true;
-            
         }
         if (currentLevel == GLACIERLEVEL)
         {
             // Sign pass and unlock next level
             LevelManager.Instance.isGlacierClear = true;
             // LevelManager.Instance.isOcenaUnlocked = true;
-            // TODO: how to go to end title
+            // TODO: how to go to end title 
             
+            SceneManager.LoadScene(ENDLEVEL);
+            return;
         }
         LoadLevel(SELECTLEVEL);
 
