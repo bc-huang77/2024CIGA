@@ -9,9 +9,6 @@ public class UpSideDownComponent : ChangeComponent
     public float duration = 0.4f;
     public float interval = 1.0f;
     private float lastCallTime = 0.0f;
-
-    
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -75,10 +72,13 @@ public class UpSideDownComponent : ChangeComponent
             targetRotation = obj.transform.rotation;
         }
 
-        Transform child = obj.transform.Find("Hurt");
-        if (child.GetComponent<HurtObject>() != null)
+        Transform child = transform.Find("Hurt");
+        if (child)
         {
-            child.GetComponent<HurtObject>().enabled = false;
+            if (child.GetComponent<HurtObject>() != null)
+            {
+                obj.GetComponent<HurtObject>().enabled = false;
+            }
         }
 
         while (elapsedTime < duration)
