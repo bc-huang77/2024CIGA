@@ -72,6 +72,11 @@ public class UpSideDownComponent : ChangeComponent
             targetRotation = obj.transform.rotation;
         }
 
+        if(obj.GetComponent<CapsuleCreator>() != null|| obj.GetComponent<Capsule>() != null)
+        {
+            targetRotation = obj.transform.rotation;
+        }
+
         Transform child = transform.Find("Hurt");
         if (child)
         {
