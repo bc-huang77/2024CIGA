@@ -4881,7 +4881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {fileID: 861858460}
-  ScaleSpeed: 0.1
+  ScaleSpeed: 1
 --- !u!114 &1054339331
 MonoBehaviour:
   m_ObjectHideFlags: 0
