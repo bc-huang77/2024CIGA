@@ -12080,6 +12080,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2691766260087463216, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691766260087463216, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691766260087463216, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691766260087463216, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -12130,6 +12142,18 @@ PrefabInstance:
     - target: {fileID: 2691766260087463220, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691766260087463220, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691766260087463222, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691766260087463223, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4576420576936290871, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -28648,6 +28672,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba13eb836fbbf43478d09db0a2745676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1598738337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2691766260087463220, guid: 4e1045b206aa24b19a5ec584b8d8b7c1, type: 3}
+  m_PrefabInstance: {fileID: 938864306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1598738342
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598738337}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1599781276
 GameObject:
   m_ObjectHideFlags: 0

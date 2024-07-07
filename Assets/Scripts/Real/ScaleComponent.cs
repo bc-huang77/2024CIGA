@@ -36,7 +36,7 @@ public class ScaleComponent : ChangeComponent
                 ScaleObject(target, pivot.position, 1 + ScaleSpeed * Time.deltaTime); // �Ŵ�
                 if (!biggerSoundPlayed)
                 {
-                    LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Bigger);
+                    // LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Bigger);
                     biggerSoundPlayed = true;
                 }
                 resetTimer = 0;
@@ -46,7 +46,7 @@ public class ScaleComponent : ChangeComponent
                 ScaleObject(target, pivot.position, 1 - ScaleSpeed * Time.deltaTime); // ��С
                 if (!smallerSoundPlayed)
                 {
-                    LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Smaller);
+                    // LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Smaller);
                     smallerSoundPlayed = true;
                 }
                 resetTimer = 0;
