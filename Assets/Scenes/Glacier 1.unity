@@ -163,6 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 148823616}
   - component: {fileID: 148823615}
+  - component: {fileID: 148823617}
   m_Layer: 0
   m_Name: 3)[[$OVU%[H{)GJVN`2_GVW_tmb
   m_TagString: UpSideDownAble
@@ -237,6 +238,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!70 &148823617
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148823614}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.6830654, y: -0.14828387}
+  m_Size: {x: 4.1931906, y: 3.5804577}
+  m_Direction: 1
 --- !u!1 &163915725
 GameObject:
   m_ObjectHideFlags: 0
@@ -5317,7 +5334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e2f39c18a9c4db98a840195be194f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseBounceForce: 60
+  baseBounceForce: 70
   targetTag: Player
   bounceControllerPrefab: {fileID: 0}
   bDependsOnParentsScale: 0
