@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18cf7d6a6b66daf4294d32f4e81bcc66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 0}
+  level: {fileID: 1141659601}
 --- !u!70 &94636009
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -454,7 +454,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 178012245}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +919,7 @@ GameObject:
   - component: {fileID: 397455561}
   - component: {fileID: 397455560}
   - component: {fileID: 397455559}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mushroom (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1803,7 +1803,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 790184503}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3536,7 +3536,7 @@ GameObject:
   - component: {fileID: 1704913445}
   - component: {fileID: 1704913444}
   - component: {fileID: 1704913443}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mushroom (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3937,7 +3937,7 @@ GameObject:
   - component: {fileID: 1859832186}
   - component: {fileID: 1859832185}
   - component: {fileID: 1859832184}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mushroom (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4882,7 +4882,7 @@ GameObject:
   - component: {fileID: 2020109086}
   - component: {fileID: 2020109085}
   - component: {fileID: 2020109090}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5022,7 +5022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2068688404}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5053,7 +5053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2080891253}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
