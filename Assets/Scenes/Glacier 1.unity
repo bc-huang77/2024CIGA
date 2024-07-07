@@ -3325,8 +3325,8 @@ GameObject:
   - component: {fileID: 1338353005}
   - component: {fileID: 1338353004}
   - component: {fileID: 1338353002}
-  - component: {fileID: 1338353006}
   - component: {fileID: 1338353007}
+  - component: {fileID: 1338353008}
   m_Layer: 0
   m_Name: Eddy
   m_TagString: UpSideDownAble
@@ -3409,28 +3409,12 @@ Transform:
   m_GameObject: {fileID: 1338353001}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.05, y: -7.1, z: 0}
-  m_LocalScale: {x: 0.44757, y: 0.3446289, z: 0.44757}
+  m_LocalScale: {x: 0.56, y: 0.3, z: 0.44757}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1338353006
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338353001}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.48840255, y: -0.25705335}
-  serializedVersion: 2
-  m_Radius: 3.1315732
 --- !u!114 &1338353007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3444,6 +3428,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glowMaterial: {fileID: 2100000, guid: 23ae725153c934b30ab72863ea3ac61f, type: 2}
+--- !u!70 &1338353008
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338353001}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.3586386, y: 0.1440359}
+  m_Size: {x: 6.81985, y: 5.5524898}
+  m_Direction: 1
 --- !u!1 &1362738348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5320,6 +5320,7 @@ MonoBehaviour:
   baseBounceForce: 60
   targetTag: Player
   bounceControllerPrefab: {fileID: 0}
+  bDependsOnParentsScale: 0
 --- !u!114 &2065909066
 MonoBehaviour:
   m_ObjectHideFlags: 0
