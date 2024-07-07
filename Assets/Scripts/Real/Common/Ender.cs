@@ -20,8 +20,10 @@ public class Ender : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.GetComponent<PlayerMovement>()!= null)
+        Debug.Log("Enter Ender");
+        if (other.GetComponent<PlayerMovement>()!= null)
         {
+            Debug.Log("On Clear Level");
             level.OnLevelClear();
         }
     }
