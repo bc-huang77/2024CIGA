@@ -20,9 +20,10 @@ public class LevelInstance : MonoBehaviour
     }
 
     const int SELECTLEVEL = 2;
-    const int CAVELEVEL = 3;
-    const int OCEANLEVEL = 4;
-    const int GLACIERLEVEL = 5;
+    const int FORESTLEVEL = 3;
+    const int CAVELEVEL = 4;
+    const int OCEANLEVEL = 5;
+    const int GLACIERLEVEL = 6;
 
     // Start is called before the first frame update
     void Start()
@@ -93,24 +94,32 @@ public class LevelInstance : MonoBehaviour
 
     public void OnPlayerDeath()
     {
-        HandleFadeIn();        
+        // HandleFadeIn();        
+        ResetLevel();
 
     }
     // TODO: DELETE IT;
-    public void TestCaveClear()
-    {
-        LevelManager.Instance.isCaveClear = true;
-        LevelManager.Instance.isOcenaUnlocked = true;
+    // public void TestCaveClear()
+    // {
+    //     LevelManager.Instance.isCaveClear = true;
+    //     LevelManager.Instance.isOcenaUnlocked = true;
 
-    }
-    public void TestUnlockCave()
-    {
-        LevelManager.Instance.isCaveUnlocked = true;
+    // }
+    // public void TestUnlockCave()
+    // {
+    //     LevelManager.Instance.isCaveUnlocked = true;
 
-    }
+    // }
     public void OnLevelClear()
     {
         int currentLevel = LevelManager.Instance.getCurrentLevelIndex();
+        if (currentLevel == FORESTLEVEL)
+        {
+            // Sign pass and unlock next level
+            LevelManager.Instance.isForestClear = true;
+            LevelManager.Instance.isCaveUnlocked = true;
+            
+        }
         if (currentLevel == CAVELEVEL)
         {
             // Sign pass and unlock next level
@@ -176,21 +185,38 @@ public class LevelInstance : MonoBehaviour
 }
     public void LoadButton()
     {
+        GameObject forestButton = GameObject.Find("GotoForest");
         GameObject caveButton = GameObject.Find("GotoCave");
         GameObject oceanButton = GameObject.Find("GotoOcean");
         GameObject glacierButton = GameObject.Find("GotoGlacier");
 
-        if (caveButton == null || oceanButton == null || glacierButton == null)
+        if (forestButton ||caveButton == null || oceanButton == null || glacierButton == null)
         {
             return;
         }
-
+        LoadForestButton(forestButton);
         LoadCaveButton(caveButton);
         LoadOcenaButton(oceanButton);
         LoadGlacierButton(glacierButton);
 
     }
 
+    private void LoadForestButton(GameObject forestButton)
+    {
+        ButtonController forestButtonController = forestButton.GetComponent<ButtonController>();
+        bool isForestUnlocked = LevelManager.Instance.isForestUnlocked;
+        forestButtonController.SetButtonInteractable(isForestUnlocked);
+        if (isForestUnlocked)
+        {
+            if (LevelManager.Instance.isForestClear)
+            {
+                // TODO: switch img
+                // forestButton.GetComponent<ImgSwitcher>().SwitchImage();
+                Debug.Log(5);
+            }
+
+        }
+    }
     private void LoadCaveButton(GameObject caveButton)
     {
         ButtonController caveButtonController = caveButton.GetComponent<ButtonController>();
