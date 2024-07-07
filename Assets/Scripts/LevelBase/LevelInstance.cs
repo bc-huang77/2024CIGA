@@ -74,6 +74,7 @@ public class LevelInstance : MonoBehaviour
 
     public void PlaySoundEffect(GlobalEnums.SoundSource index)
     {
+        Debug.Log(index);
         AudioManager.instance.PlaySoundEffect(index);
         
     }
