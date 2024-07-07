@@ -9,6 +9,7 @@ public class Portal : MonoBehaviour
     public bool bEnoughSize = false;
     public Transform portalCenter;
     public float a_time = 1.0f;
+    public GameObject platform;
 
     private Portal anotherPortalComponent;
     private float activeTime = 0.0f;
@@ -16,6 +17,7 @@ public class Portal : MonoBehaviour
     void Start()
     {
         anotherPortalComponent = anotherPortal.GetComponent<Portal>();
+
     }
 
     // Update is called once per frame

@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 239181945}
   - component: {fileID: 239181947}
   - component: {fileID: 239181946}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e2f39c18a9c4db98a840195be194f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseBounceForce: 30
+  baseBounceForce: 60
   targetTag: Player
   bounceControllerPrefab: {fileID: 0}
   bDependsOnParentsScale: 1
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 351371329}
   - component: {fileID: 351371331}
   - component: {fileID: 351371330}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e2f39c18a9c4db98a840195be194f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseBounceForce: 30
+  baseBounceForce: 60
   targetTag: Player
   bounceControllerPrefab: {fileID: 0}
   bDependsOnParentsScale: 1
@@ -1945,6 +1945,7 @@ MonoBehaviour:
   bEnoughSize: 0
   portalCenter: {fileID: 830211181}
   a_time: 1
+  platform: {fileID: 0}
 --- !u!212 &830211180
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2005,7 +2006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830211178}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -2, z: 0}
+  m_LocalPosition: {x: -1.58, y: -2.25, z: 0}
   m_LocalScale: {x: 1.2610906, y: 1.8050956, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2173,7 +2174,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893850087}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.03, y: 0.44, z: 0}
+  m_LocalPosition: {x: 2.03, y: 1.77, z: 0}
   m_LocalScale: {x: 1.2610906, y: 1.8050956, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2198,6 +2199,7 @@ MonoBehaviour:
   bEnoughSize: 0
   portalCenter: {fileID: 893850088}
   a_time: 1
+  platform: {fileID: 0}
 --- !u!212 &893850090
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2388,7 +2390,7 @@ GameObject:
   - component: {fileID: 955246332}
   - component: {fileID: 955246334}
   - component: {fileID: 955246333}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2438,7 +2440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e2f39c18a9c4db98a840195be194f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseBounceForce: 30
+  baseBounceForce: 60
   targetTag: Player
   bounceControllerPrefab: {fileID: 0}
   bDependsOnParentsScale: 1
@@ -2539,6 +2541,7 @@ MonoBehaviour:
   bEnoughSize: 0
   portalCenter: {fileID: 1076790807}
   a_time: 1
+  platform: {fileID: 0}
 --- !u!212 &1076790806
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2599,7 +2602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076790803}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -2, z: 0}
+  m_LocalPosition: {x: -1.5, y: -2.4, z: 0}
   m_LocalScale: {x: 1.2610906, y: 1.8050956, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3189,7 +3192,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 43fdec8e154fff44fa3d5d91e7765853, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d4f4e90385bec94eaa36df7e806d579, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3208,9 +3211,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563772926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.41, y: -4.07, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.54, z: 0.030000001}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: -0.65, y: -5.08, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.022222223}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 830211181}
   - {fileID: 893850088}
@@ -3230,9 +3233,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0051479869788594b978d252d073fd31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PortalA: {fileID: 0}
-  PortalB: {fileID: 0}
-  SizeLimit: 1
+  PortalA: {fileID: 830211181}
+  PortalB: {fileID: 893850088}
+  platform: {fileID: 178756799}
+  SizeLimit: 0.8
 --- !u!114 &1563772931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3260,7 +3264,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.18214321, y: -0.38984323}
+  m_Offset: {x: 0.09173703, y: 0.06218767}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3271,7 +3275,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.932149, y: 5.3723454}
+  m_Size: {x: 3.1129613, y: 7.816662}
   m_EdgeRadius: 0
 --- !u!114 &1563772933
 MonoBehaviour:
@@ -3313,7 +3317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604923880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.03, y: 0.44, z: 0}
+  m_LocalPosition: {x: 2.03, y: 1.59, z: 0}
   m_LocalScale: {x: 1.2610906, y: 1.8050956, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3354,6 +3358,7 @@ MonoBehaviour:
   bEnoughSize: 0
   portalCenter: {fileID: 1604923881}
   a_time: 1
+  platform: {fileID: 0}
 --- !u!212 &1604923884
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3815,7 +3820,7 @@ GameObject:
   - component: {fileID: 1825970913}
   - component: {fileID: 1825970915}
   - component: {fileID: 1825970914}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3865,7 +3870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e2f39c18a9c4db98a840195be194f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseBounceForce: 30
+  baseBounceForce: 60
   targetTag: Player
   bounceControllerPrefab: {fileID: 0}
   bDependsOnParentsScale: 1
@@ -4222,7 +4227,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.18214321, y: -0.38984323}
+  m_Offset: {x: 0.18214321, y: 0.06121397}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4233,7 +4238,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.932149, y: 5.3723454}
+  m_Size: {x: 2.932149, y: 7.777981}
   m_EdgeRadius: 0
 --- !u!114 &1950180541
 MonoBehaviour:
@@ -4261,9 +4266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0051479869788594b978d252d073fd31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PortalA: {fileID: 0}
-  PortalB: {fileID: 0}
-  SizeLimit: 1
+  PortalA: {fileID: 1076790807}
+  PortalB: {fileID: 1604923881}
+  platform: {fileID: 57944700}
+  SizeLimit: 0.8
 --- !u!60 &1950180543
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4749,7 +4755,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 43fdec8e154fff44fa3d5d91e7765853, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d4f4e90385bec94eaa36df7e806d579, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4768,9 +4774,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950180538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.3, y: -4.07, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.54, z: 0.030000001}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 6.26, y: -5.37, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1076790807}
   - {fileID: 1604923881}

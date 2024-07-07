@@ -8,6 +8,7 @@ public class Trunk : ChangeableObject
     private ScaleComponent scaleComponent;
     public Transform PortalA;
     public Transform PortalB;
+    public GameObject platform;
 
     private Portal portalComponentA;
     private Portal portalComponentB;
@@ -23,6 +24,10 @@ public class Trunk : ChangeableObject
         PortalB = transform.Find("PortalB");
         portalComponentA = PortalA.GetComponent<Portal>();
         portalComponentB = PortalB.GetComponent<Portal>();
+        if (platform)
+        {
+            platform.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -32,11 +37,19 @@ public class Trunk : ChangeableObject
         {
             portalComponentA.bEnoughSize = true;
             portalComponentB.bEnoughSize = true;
+            if (platform)
+            {
+                platform.SetActive(true);
+            }
         }
         else
         {
             portalComponentA.bEnoughSize = false;
             portalComponentB.bEnoughSize = false;
+            if (platform)
+            {
+                platform.SetActive(false);
+            }
         }
     }
 

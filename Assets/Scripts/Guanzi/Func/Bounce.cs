@@ -16,7 +16,7 @@ public class Bounce : MonoBehaviour
             if (bDependsOnParentsScale)
             {
                 //获取父对象的缩放
-                Vector3 parentScale = transform.parent.localScale;
+                Vector3 parentScale = transform.parent.localScale; 
                 playerMovement.Bounce(baseBounceForce * parentScale.y);
             }
             else
