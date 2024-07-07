@@ -19,21 +19,12 @@ public class HurtObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Enter");
         if (other.GetComponent<PlayerMovement>() != null)
         {
             Debug.Log("Player Dead");
             other.GetComponent<PlayerMovement>().Dead();
-            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Level");
-            for(int i = 0; i < gameObjects.Length; i++)
-            {
-                Debug.Log("found");
-                LevelInstance level = gameObjects[i].GetComponent<LevelInstance>();
-                if(level)
-                {
-                    level.GetComponent<LevelInstance>().ResetLevel();
-                    return;
-                }
-            }
+            LevelInstance.Instance.OnLevelClear();
         }
     }
 }

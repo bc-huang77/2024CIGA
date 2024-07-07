@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Ender : MonoBehaviour
 {
-    public LevelInstance level;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +24,7 @@ public class Ender : MonoBehaviour
         {
             Debug.Log("On Clear Level");
             LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Win);
-            level.OnLevelClear();
+            LevelInstance.Instance.OnLevelClear();
         }
     }
 }
