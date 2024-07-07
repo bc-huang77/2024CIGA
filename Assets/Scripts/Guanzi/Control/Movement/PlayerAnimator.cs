@@ -131,7 +131,7 @@ namespace GrayCity.Control.Movement._Scripts
                     else if(scene == Scene.under_the_sea)
                         LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Under_the_sea);
                     else
-                        LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Moving);
+                        LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Grass);
                 }
                 else
                 {

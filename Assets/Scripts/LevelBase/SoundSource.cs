@@ -38,6 +38,7 @@ public class GlobalEnums : ScriptableObject
         Grass, 
         Sand,
         Under_the_sea,
+        Cg,
 
     }
 }
