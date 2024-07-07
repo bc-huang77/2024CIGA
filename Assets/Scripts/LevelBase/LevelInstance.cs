@@ -57,6 +57,7 @@ public class LevelInstance : MonoBehaviour
     }
     public void PlayMusicOnLoop()
     {
+        Debug.Log("PlayMusicOnLoop");
         AudioManager.instance.PlayMusicOnLoop();
     }
 
@@ -68,6 +69,7 @@ public class LevelInstance : MonoBehaviour
 
     public void SetCurrentMusic(GlobalEnums.SoundSource index)
     {
+        Debug.Log("Set :" + index);
         AudioManager.instance.SetCurrentMusic(index);
 
     }
