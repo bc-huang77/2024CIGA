@@ -40,7 +40,7 @@ public class GlobalEnums : ScriptableObject
         Under_the_sea,
         Cg,
         Glass_broken,
-
+        Win,
     }
 }
 // public class SoundSource { public static SoundSource instance; // AudioManager 的单例 // 私有构造函数，防止通过 new 关键字创建实例 private SoundSource() { } public List<AudioClip> SoundEffects;

@@ -24,6 +24,7 @@ public class Ender : MonoBehaviour
         if (other.GetComponent<PlayerMovement>()!= null)
         {
             Debug.Log("On Clear Level");
+            LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Win);
             level.OnLevelClear();
         }
     }
