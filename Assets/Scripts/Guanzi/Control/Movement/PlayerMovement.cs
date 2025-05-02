@@ -180,7 +180,7 @@ namespace GrayCity.Control.Movement._Scripts
         private void HandleJump()
         {
             // 如果当前还没有提前结束跳跃，且在空中，且松开跳跃键，且垂直速度大于0，则标记为提前结束跳跃
-            if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.velocity.y > 0) _endedJumpEarly = true;
+            if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.linearVelocity.y > 0) _endedJumpEarly = true;
             
             // 既没有跳跃，也没有缓存的跳跃，这两者实际上是一个东西，都在第56行
             if (!_jumpToConsume && !HasBufferedJump) return;
@@ -250,14 +250,14 @@ namespace GrayCity.Control.Movement._Scripts
 
             if (IsBouncing)
             {
-                _rb.velocity = new Vector2(_frameVelocity.x, 0f);
+                _rb.linearVelocity = new Vector2(_frameVelocity.x, 0f);
             }
 
             else if (IsClimbing)
             {
                 // 爬梯子，水平速度迅速接近0
-                float tempX = Mathf.MoveTowards(_rb.velocity.x, 0, _stats.AirDeceleration * Time.fixedDeltaTime);
-                _rb.velocity = new Vector2(tempX, 0f);
+                float tempX = Mathf.MoveTowards(_rb.linearVelocity.x, 0, _stats.AirDeceleration * Time.fixedDeltaTime);
+                _rb.linearVelocity = new Vector2(tempX, 0f);
                 
                 // 获取玩家输入
                 float verticalInput = Input.GetAxis("Vertical");
@@ -275,18 +275,18 @@ namespace GrayCity.Control.Movement._Scripts
                 {
                     Debug.Log("Flowing Jump");
                     LevelInstance.Instance.PlaySoundEffect(GlobalEnums.SoundSource.Jump_water);
-                    _rb.velocity = new Vector2(_rb.velocity.x, 15f);
+                    _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 15f);
                     flowJump = false;
                 }
                 
                 
                 _frameVelocity.x = 1f * _frameVelocity.x;
-                _frameVelocity.y = Mathf.MoveTowards(_rb.velocity.y, -3f, 100f * Time.fixedDeltaTime);
-                _rb.velocity = _frameVelocity;
+                _frameVelocity.y = Mathf.MoveTowards(_rb.linearVelocity.y, -3f, 100f * Time.fixedDeltaTime);
+                _rb.linearVelocity = _frameVelocity;
             }
             else
             {
-                _rb.velocity = _frameVelocity; //将速度赋值给Rigidbody2D
+                _rb.linearVelocity = _frameVelocity; //将速度赋值给Rigidbody2D
             }
         }
 
